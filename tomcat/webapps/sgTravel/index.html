@@ -1,0 +1,30 @@
+<html>
+<head>
+
+	<title>Yet Another Traveling Website</title>
+	<!-- Include Required Prerequisites -->
+	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+
+	<!-- Include Date Range Picker -->
+	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+</head>
+<body>
+	<h2>Yet Another Traveling Website</h2>
+	<form method="post" action="query">
+		Search for your trip:<br /><br />
+		<p>Search for city or country: <input type="text" name="destination" /></p>
+		<p>
+			Choose Start Date: <input type="text" name="daterange" />
+			<script type="text/javascript">
+			$(function() {
+    			$('input[name="daterange"]').daterangepicker();
+			});
+			</script>
+		</p>
+		<input type="submit" value="Search" />
+	</form>
+</body>
+</html>
