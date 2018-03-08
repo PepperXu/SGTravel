@@ -49,3 +49,57 @@
 08-Mar-2018 19:55:38.754 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-9999"]
 08-Mar-2018 19:55:38.767 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
 08-Mar-2018 19:55:38.769 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 2395 ms
+08-Mar-2018 21:45:55.643 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.4
+08-Mar-2018 21:45:55.648 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jan 18 2018 19:42:17 UTC
+08-Mar-2018 21:45:55.649 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.4.0
+08-Mar-2018 21:45:55.650 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+08-Mar-2018 21:45:55.650 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.13.2
+08-Mar-2018 21:45:55.650 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+08-Mar-2018 21:45:55.650 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre
+08-Mar-2018 21:45:55.650 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_112-b16
+08-Mar-2018 21:45:55.650 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+08-Mar-2018 21:45:55.651 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/Pepper/SGTravel/tomcat
+08-Mar-2018 21:45:55.651 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/Pepper/SGTravel/tomcat
+08-Mar-2018 21:45:55.652 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/Pepper/SGTravel/tomcat/conf/logging.properties
+08-Mar-2018 21:45:55.652 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+08-Mar-2018 21:45:55.652 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+08-Mar-2018 21:45:55.652 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+08-Mar-2018 21:45:55.653 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+08-Mar-2018 21:45:55.653 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/Pepper/SGTravel/tomcat
+08-Mar-2018 21:45:55.653 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/Pepper/SGTravel/tomcat
+08-Mar-2018 21:45:55.653 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/Pepper/SGTravel/tomcat/temp
+08-Mar-2018 21:45:55.653 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/Pepper/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+08-Mar-2018 21:45:55.848 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-9999"]
+08-Mar-2018 21:45:55.891 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+08-Mar-2018 21:45:55.901 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+08-Mar-2018 21:45:55.903 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+08-Mar-2018 21:45:55.903 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 841 ms
+08-Mar-2018 21:45:55.935 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+08-Mar-2018 21:45:55.935 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.4
+08-Mar-2018 21:45:55.944 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/Pepper/SGTravel/tomcat/webapps/ebookshop]
+08-Mar-2018 21:45:56.566 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+08-Mar-2018 21:45:56.632 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/Pepper/SGTravel/tomcat/webapps/ebookshop] has finished in [688] ms
+08-Mar-2018 21:45:56.632 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/Pepper/SGTravel/tomcat/webapps/docs]
+08-Mar-2018 21:45:56.754 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+08-Mar-2018 21:45:56.756 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/Pepper/SGTravel/tomcat/webapps/docs] has finished in [124] ms
+08-Mar-2018 21:45:56.756 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/Pepper/SGTravel/tomcat/webapps/manager]
+08-Mar-2018 21:45:56.891 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+08-Mar-2018 21:45:56.896 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/Pepper/SGTravel/tomcat/webapps/manager] has finished in [140] ms
+08-Mar-2018 21:45:56.897 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/Pepper/SGTravel/tomcat/webapps/examples]
+08-Mar-2018 21:45:57.237 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+08-Mar-2018 21:45:57.256 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/Pepper/SGTravel/tomcat/webapps/examples] has finished in [360] ms
+08-Mar-2018 21:45:57.257 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/Pepper/SGTravel/tomcat/webapps/ROOT]
+08-Mar-2018 21:45:57.378 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+08-Mar-2018 21:45:57.381 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/Pepper/SGTravel/tomcat/webapps/ROOT] has finished in [124] ms
+08-Mar-2018 21:45:57.381 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/Pepper/SGTravel/tomcat/webapps/hello]
+08-Mar-2018 21:45:57.501 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+08-Mar-2018 21:45:57.510 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/Pepper/SGTravel/tomcat/webapps/hello] has finished in [129] ms
+08-Mar-2018 21:45:57.511 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/Pepper/SGTravel/tomcat/webapps/host-manager]
+08-Mar-2018 21:45:57.633 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+08-Mar-2018 21:45:57.635 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/Pepper/SGTravel/tomcat/webapps/host-manager] has finished in [124] ms
+08-Mar-2018 21:45:57.636 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/Pepper/SGTravel/tomcat/webapps/sgTravel]
+08-Mar-2018 21:45:57.774 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+08-Mar-2018 21:45:57.775 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/Pepper/SGTravel/tomcat/webapps/sgTravel] has finished in [139] ms
+08-Mar-2018 21:45:57.779 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-9999"]
+08-Mar-2018 21:45:57.786 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+08-Mar-2018 21:45:57.789 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 1885 ms
