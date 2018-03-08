@@ -1,0 +1,47 @@
+11-Feb-2018 14:31:47.888 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.4
+11-Feb-2018 14:31:47.891 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jan 18 2018 19:42:17 UTC
+11-Feb-2018 14:31:47.891 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.4.0
+11-Feb-2018 14:31:47.892 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+11-Feb-2018 14:31:47.892 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.13.2
+11-Feb-2018 14:31:47.892 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+11-Feb-2018 14:31:47.892 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre
+11-Feb-2018 14:31:47.892 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_112-b16
+11-Feb-2018 14:31:47.893 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+11-Feb-2018 14:31:47.893 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/Pepper/IM2073WebApp/tomcat
+11-Feb-2018 14:31:47.893 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/Pepper/IM2073WebApp/tomcat
+11-Feb-2018 14:31:47.895 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/Pepper/IM2073WebApp/tomcat/conf/logging.properties
+11-Feb-2018 14:31:47.895 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+11-Feb-2018 14:31:47.895 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+11-Feb-2018 14:31:47.895 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+11-Feb-2018 14:31:47.895 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+11-Feb-2018 14:31:47.895 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/Pepper/IM2073WebApp/tomcat
+11-Feb-2018 14:31:47.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/Pepper/IM2073WebApp/tomcat
+11-Feb-2018 14:31:47.896 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/Pepper/IM2073WebApp/tomcat/temp
+11-Feb-2018 14:31:47.896 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/Pepper/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+11-Feb-2018 14:31:48.067 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-9999"]
+11-Feb-2018 14:31:48.098 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+11-Feb-2018 14:31:48.110 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+11-Feb-2018 14:31:48.111 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+11-Feb-2018 14:31:48.113 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 719 ms
+11-Feb-2018 14:31:48.146 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+11-Feb-2018 14:31:48.146 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.4
+11-Feb-2018 14:31:48.157 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/Pepper/IM2073WebApp/tomcat/webapps/docs]
+11-Feb-2018 14:31:48.530 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/Pepper/IM2073WebApp/tomcat/webapps/docs] has finished in [372] ms
+11-Feb-2018 14:31:48.531 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/Pepper/IM2073WebApp/tomcat/webapps/manager]
+11-Feb-2018 14:31:48.578 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/Pepper/IM2073WebApp/tomcat/webapps/manager] has finished in [47] ms
+11-Feb-2018 14:31:48.580 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/Pepper/IM2073WebApp/tomcat/webapps/examples]
+11-Feb-2018 14:31:48.891 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/Pepper/IM2073WebApp/tomcat/webapps/examples] has finished in [312] ms
+11-Feb-2018 14:31:48.892 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/Pepper/IM2073WebApp/tomcat/webapps/ROOT]
+11-Feb-2018 14:31:48.910 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/Pepper/IM2073WebApp/tomcat/webapps/ROOT] has finished in [18] ms
+11-Feb-2018 14:31:48.910 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/Pepper/IM2073WebApp/tomcat/webapps/host-manager]
+11-Feb-2018 14:31:48.931 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/Pepper/IM2073WebApp/tomcat/webapps/host-manager] has finished in [21] ms
+11-Feb-2018 14:31:48.937 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-9999"]
+11-Feb-2018 14:31:48.948 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+11-Feb-2018 14:31:48.949 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 835 ms
+11-Feb-2018 14:35:03.290 INFO [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-9999"]
+11-Feb-2018 14:35:03.296 INFO [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+11-Feb-2018 14:35:03.348 INFO [Thread-5] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+11-Feb-2018 14:35:03.372 INFO [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-9999"]
+11-Feb-2018 14:35:03.375 INFO [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+11-Feb-2018 14:35:03.377 INFO [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-9999"]
+11-Feb-2018 14:35:03.377 INFO [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]

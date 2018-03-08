@@ -1,0 +1,15 @@
+0:0:0:0:0:0:0:1 - - [28/Feb/2018:10:00:08 +0800] "GET /ebookshop/querybook.html HTTP/1.1" 200 463
+0:0:0:0:0:0:0:1 - - [28/Feb/2018:10:26:17 +0800] "GET /ebookshop/querybook.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/Feb/2018:10:26:48 +0800] "GET /ebookshop/query HTTP/1.1" 200 243
+0:0:0:0:0:0:0:1 - - [28/Feb/2018:10:29:51 +0800] "GET /ebookshop/querybook.html HTTP/1.1" 200 463
+0:0:0:0:0:0:0:1 - - [28/Feb/2018:10:29:54 +0800] "GET /ebookshop/query?author=Kumar HTTP/1.1" 200 280
+0:0:0:0:0:0:0:1 - - [28/Feb/2018:10:29:59 +0800] "GET /ebookshop/query?author=Mohammad+Ali&author=Kumar HTTP/1.1" 200 307
+0:0:0:0:0:0:0:1 - - [28/Feb/2018:10:30:11 +0800] "GET /ebookshop/query?author=Tan+Ah+Teck&author=Mohammad+Ali&author=Kumar HTTP/1.1" 200 345
+0:0:0:0:0:0:0:1 - - [28/Feb/2018:10:30:32 +0800] "GET /ebookshop/query?author=Tan+Ah+Teck&author=Mohammad+Ali&author=Kumar HTTP/1.1" 200 345
+0:0:0:0:0:0:0:1 - - [28/Feb/2018:10:40:57 +0800] "GET /ebookshop/querybook.html HTTP/1.1" 200 431
+0:0:0:0:0:0:0:1 - - [28/Feb/2018:10:41:01 +0800] "GET /ebookshop/query?author=Mohammad+Ali&author=Kumar HTTP/1.1" 200 355
+0:0:0:0:0:0:0:1 - - [28/Feb/2018:10:41:16 +0800] "GET /ebookshop/query?author=Tan+Ah+Teck&author=Mohammad+Ali&author=Kumar HTTP/1.1" 200 465
+0:0:0:0:0:0:0:1 - - [28/Feb/2018:11:21:02 +0800] "GET /ebookshop/querybook.html HTTP/1.1" 200 432
+0:0:0:0:0:0:0:1 - - [28/Feb/2018:11:21:04 +0800] "POST /ebookshop/query HTTP/1.1" 200 283
+0:0:0:0:0:0:0:1 - - [28/Feb/2018:11:21:10 +0800] "POST /ebookshop/query HTTP/1.1" 200 355
+0:0:0:0:0:0:0:1 - - [28/Feb/2018:11:21:22 +0800] "POST /ebookshop/query HTTP/1.1" 200 310

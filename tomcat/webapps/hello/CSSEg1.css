@@ -1,0 +1,29 @@
+/* CSS Example 1 ("CSSEg1.css"): CSS Tag Selectors */
+/* Rule 1: Apply to the <body> element and possibly its descendants */
+body {
+  font-family: "Segoe UI", Tahoma, Helvetica, Arial, Verdana, sans-serif;
+  font-size: 14px;             /* in pixels (px) */
+  margin: 5px 15px 5px 15px;   /* top right bottom left - no commas in between */
+  padding: 0;
+  background-color: #eee;      /* light gray, same as #eeeeee */
+}
+
+/* Rule 2: Apply to <h1> to <h6> elements */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Trebuchet MS", "Segoe UI", Helvetica, Tahoma, Arial, Verdana, sans-serif;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Rule 3: Specifically for <h2>. Override the previous rule */
+h2 {
+  color: blue;
+  font-style: italic;
+}
+
+/* Rule 4: Apply to all the <p> elements */
+p {
+  text-align: justify;
+  color: black;
+}
