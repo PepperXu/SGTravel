@@ -252,7 +252,7 @@ insert into Plan_City values (011, 18);
 insert into Plan_City values (012, 19);
 
 insert into Plan_City values (013, 20);
-insert into Plan_City values (0013, 21);
+insert into Plan_City values (013, 21);
 
 insert into Plan_City values (014, 22);
 insert into Plan_City values (014, 23);

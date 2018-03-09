@@ -4,7 +4,6 @@ import java.sql.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
- @WebServlet("/searchmvp")
 public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and above only
 
    // The doGet() runs once per HTTP GET request to this servlet.
@@ -27,7 +26,11 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
 
          // Step 2: Create a "Statement" object inside the "Connection"
          stmt = conn.createStatement();
-
+         String city = request.getParameter("city");
+         if (city == null) {
+            out.println("<h2>Please go back and select an city</h2>");
+            return; // Exit doGet()
+        }
          // Step 3: Execute a SQL SELECT query
          //String[] travelPlans = request.getParameterValues("plan");  // Returns an array
 //
@@ -36,36 +39,39 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
          //   return; // Exit doGet()
          //}
 
-         String date = request.getParameter("date");
+         //String date = request.getParameter("date");
+         //String[] parts = date.split(" - ");
+//
+         //String startDate = parts[0];
+         //String endDate = parts[1];
+
+         String sqlStr = "SELECT Plan.planID, Plan.planTitle, Plan.country, Plan.price, Plan.duration FROM Plan, Plan_City, City WHERE City.city = "
+               + "'" + city + "'" + " AND Plan_City.cityID = City.cityID AND Plan_City.planID = Plan.planID";
 
 
-         String sqlStr = "SELECT * FROM Plan WHERE city = "
-               + "'" + request.getParameter("city") + "'" + "AND startDate ="+ "'" + request.getParameter("startDate") + "'"
-               + " AND remaining_seat > 0 ";
 
-          sqlStr += "'" + travelPlans[0] + "'";  // First city
-
-          for (int i = 1; i < travelPlans.length; ++i) {
-          sqlStr += ", '" + travelPlans[i] + "'";  // Subsequent cities need a leading commas
-       }
+          //sqlStr += "'" + travelPlans[0] + "'";  // First city
+//
+          //for (int i = 1; i < travelPlans.length; ++i) {
+          //sqlStr += ", '" + travelPlans[i] + "'";  // Subsequent cities need a leading commas
+       //}
 
 
          // Print an HTML page as output of query
          out.println("<html><head><title>Search Results</title></head><body>");
          out.println("<h2>Thank you for your search.</h2>");
-
+         out.println("<p>You query is: " + sqlStr + "</p>");
          ResultSet rset = stmt.executeQuery(sqlStr); // Send the query to the server
 
          // Step 4: Process the query result
          int count = 0;
          while(rset.next()) {
             // Print a paragraph <p>...</p> for each row
-            out.println( "<head> Travel Plan Recommendation</head>"
-                  +"<br/>"+"<h5>planID:</h5> "+ rset.getInt("<h5>planID</h5>")
-                  + "<br/>" + rset.getString("<h2>planTitle</h2>")
-                  + "<br/>" + "<h5>Country:</h5> "+ rset.getString("<h5>country</h5>")
-                  + "<br/>"+ "<h5>Price: $</h5>" + rset.getInt("<h5>price</h5>") + "per person"
-                  + "<br/>" +"<h5>Duration:</h5>" + rset.getInt("<h5>duration</h5>")
+            out.println( "<h5>planID:"+ rset.getInt("planID") + "</h5> "
+                  + "<br/>" + "<h5>planTitle:"+rset.getString("planTitle") + "</h5>"
+                  + "<br/>" + "<h5>Country: "+ rset.getString("country") + "</h5>"
+                  + "<br/>"+ "<h5>Price: $" + rset.getInt("price") + "per person. </h5>"
+                  + "<br/>" +"<h5>Duration:" + rset.getInt("duration") + "</h5>"
                    );
             ++count;
          }
@@ -89,8 +95,3 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
    }
 }
 
-@Override
-public void doPost (HttpServletRequest request, HttpServletResponse response)
-                   throws ServletException, IOException {
-   doGet(request, response);  // Re-direct POST request to doGet()
-}

@@ -7,10 +7,10 @@
 
   <!-- To save as "ebookshop\WEB-INF\web.xml" -->
 
-  <servlet>
+  <!--servlet>
     <servlet-name>Search</servlet-name>
     <servlet-class>SearchServlet</servlet-class>
-  </servlet>
+  </servlet-->
 
    <servlet>
     <servlet-name>SearchMultiValueParameter</servlet-name>
@@ -20,10 +20,10 @@
   <!-- Note: All <servlet> elements must be placed
        in front of <servlet-mapping> elements -->
 
-  <servlet-mapping>
+  <!--servlet-mapping>
     <servlet-name>Search</servlet-name>
     <url-pattern>/search</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping-->
 
   <servlet-mapping>
     <servlet-name>SearchMultiValueParameter</servlet-name>
