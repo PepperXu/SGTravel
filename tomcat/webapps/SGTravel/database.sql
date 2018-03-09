@@ -93,7 +93,7 @@ create table Comment
 
 drop table if exists Cart;
 
-   create table Cart
+create table Cart
       (
         planID int,
         qty  int,
@@ -197,11 +197,6 @@ insert into City values ('Melbourne','Australia',32);
 
 
 
-select * from City
-select name, gpa from class101 where gpa > 4.85;
-update class101 set gpa = 4.4 where name = 'Tan Ah Teck';
-delete from class101 where id = 22;
-source ~/myWebProject/mycommands.sql
 
 #Plan_City
 #planID INT, cityID INT 
