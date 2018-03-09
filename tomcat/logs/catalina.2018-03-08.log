@@ -103,3 +103,7 @@
 08-Mar-2018 21:45:57.779 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-9999"]
 08-Mar-2018 21:45:57.786 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
 08-Mar-2018 21:45:57.789 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 1885 ms
+08-Mar-2018 22:05:48.833 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload Reloading context [/sgTravel]
+08-Mar-2018 22:05:48.834 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/sgTravel] has started
+08-Mar-2018 22:05:48.979 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+08-Mar-2018 22:05:48.983 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/sgTravel] is completed
