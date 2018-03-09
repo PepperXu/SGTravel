@@ -8,7 +8,7 @@
   <!-- To save as "ebookshop\WEB-INF\web.xml" -->
 
   <servlet>
-    <servlet-name>EBookShopQuery</servlet-name>
+    <servlet-name>SGTravelQuery</servlet-name>
     <servlet-class>QueryServlet</servlet-class>
   </servlet>
 
@@ -16,7 +16,7 @@
        in front of <servlet-mapping> elements -->
 
   <servlet-mapping>
-    <servlet-name>EBookShopQuery</servlet-name>
+    <servlet-name>SGTravelQuery</servlet-name>
     <url-pattern>/query</url-pattern>
   </servlet-mapping>
 
