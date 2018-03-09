@@ -22,7 +22,7 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
          // For MySQL
          Class.forName("com.mysql.jdbc.Driver");  // Needed for JDK9/Tomcat9
          conn = DriverManager.getConnection(
-            "jdbc:mysql://localhost:3306/SGTravel", "billy ", "1234");  // <<== Check
+            "jdbc:mysql://localhost:3306/SGTravel", "billy", "1234");  // <<== Check
 
          // Step 2: Create a "Statement" object inside the "Connection"
          stmt = conn.createStatement();
