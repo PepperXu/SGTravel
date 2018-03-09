@@ -8,16 +8,26 @@
   <!-- To save as "ebookshop\WEB-INF\web.xml" -->
 
   <servlet>
-    <servlet-name>EBookShopQuery</servlet-name>
-    <servlet-class>QueryServlet</servlet-class>
+    <servlet-name>Search</servlet-name>
+    <servlet-class>SearchServlet</servlet-class>
+  </servlet>
+
+   <servlet>
+    <servlet-name>SearchMultiValueParameter</servlet-name>
+    <servlet-class>SearchMultiValueParamServlet</servlet-class>
   </servlet>
 
   <!-- Note: All <servlet> elements must be placed
        in front of <servlet-mapping> elements -->
 
   <servlet-mapping>
-    <servlet-name>EBookShopQuery</servlet-name>
-    <url-pattern>/query</url-pattern>
+    <servlet-name>Search</servlet-name>
+    <url-pattern>/search</url-pattern>
   </servlet-mapping>
 
+  <servlet-mapping>
+    <servlet-name>SearchMultiValueParameter</servlet-name>
+    <url-pattern>/searchmvp</url-pattern>
+  </servlet-mapping>
+MultiValue
 </web-app>

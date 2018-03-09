@@ -4,7 +4,8 @@ import java.sql.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
  
-public class QueryServlet extends HttpServlet {  // JDK 6 and above only
+ @WebServlet("/searchmvp")
+public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and above only
  
    // The doGet() runs once per HTTP GET request to this servlet.
    @Override
@@ -35,28 +36,34 @@ public class QueryServlet extends HttpServlet {  // JDK 6 and above only
             return; // Exit doGet()
          } 
 
-         String sqlStr = "SELECT * FROM books WHERE country = "
-               + "'" + request.getParameter("country") + "'" + "AND city ="+ "'" + request.getParameter("city") + "'"
-               + " AND qty > 0 ORDER BY author ASC, title ASC";
+         String sqlStr = "SELECT * FROM Plan WHERE city = "
+               + "'" + request.getParameter("city") + "'" + "AND startDate ="+ "'" + request.getParameter("startDate") + "'"
+               + " AND remaining_seat > 0 ";
+
+          sqlStr += "'" + travelPlans[0] + "'";  // First city
+
+          for (int i = 1; i < travelPlans.length; ++i) {
+          sqlStr += ", '" + travelPlans[i] + "'";  // Subsequent cities need a leading commas
+       }
+
  
          // Print an HTML page as output of query
          out.println("<html><head><title>Search Results</title></head><body>");
-         out.println("<h2>Thank you for your query.</h2>");
-         out.println("<p>You query is: " + sqlStr + "</p>"); // Echo for debugging
+         out.println("<h2>Thank you for your search.</h2>");
+         out.println("<p>The cities that you chose are: " + sqlStr + "</p>"); // Echo for debugging
          ResultSet rset = stmt.executeQuery(sqlStr); // Send the query to the server
  
          // Step 4: Process the query result
          int count = 0;
          while(rset.next()) {
             // Print a paragraph <p>...</p> for each row
-            out.println("<p>" + "<h5>planID:</h5> "rset.getInt("<h5>planID</h5>")
-                  + "<br>" + rset.getString("<h2>planTitle</h2>")
-                  + ", <br>" + "<h5>Country:</h5> "+ rset.getString("<h5>country</h5>")
-                  + ", <br>"+ "<h5>Price: $</h5>" + rset.getInt("<h5>price</h5>") 
-                  + ", <br>" +"<h5>Duration:</h5>" rset.getInt("<h5>duration</h5>")
-                  
-                  +, 
-                   "</p>");
+            out.println( "<head> Travel Plan Recommendation</head>"
+                  +"<br/>"+"<h5>planID:</h5> "+ rset.getInt("<h5>planID</h5>")
+                  + "<br/>" + rset.getString("<h2>planTitle</h2>")
+                  + "<br/>" + "<h5>Country:</h5> "+ rset.getString("<h5>country</h5>")
+                  + "<br/>"+ "<h5>Price: $</h5>" + rset.getInt("<h5>price</h5>") + "per person"
+                  + "<br/>" +"<h5>Duration:</h5>" + rset.getInt("<h5>duration</h5>")
+                   );
             ++count;
          }
          out.println("<p>==== " + count + " records found ====</p>");

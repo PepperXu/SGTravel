@@ -17,12 +17,12 @@ create table Plan
 	img varchar(50),  #?
    );
 
-drop table if exists StartDate;
+drop table if exists Plan_StartDate;
 
 create table Plan_StartDate
 	(
 		planID int,
-		start_date date, 
+		startDate date, 
 	);
 
 #drop table if exists Country;
@@ -97,7 +97,6 @@ drop table if exists Cart;
       (
         planID int,
         qty  int,
-        total_price int,
         img varchar(200)
       );
 #Plan
@@ -254,32 +253,52 @@ insert into Plan_City values (008, 17);
 
 insert into Plan_City values (009, 14);
 
-insert into Plan_City values (0010, 13);
+insert into Plan_City values (010, 13);
 
-insert into Plan_City values (0011, 18);
+insert into Plan_City values (011, 18);
 
-insert into Plan_City values (0012, 19);
+insert into Plan_City values (012, 19);
 
-insert into Plan_City values (0013, 20);
+insert into Plan_City values (013, 20);
 insert into Plan_City values (0013, 21);
 
-insert into Plan_City values (0014, 22);
-insert into Plan_City values (0014, 23);
-insert into Plan_City values (0014, 24);
-insert into Plan_City values (0014, 25);
-insert into Plan_City values (0014, 26);
+insert into Plan_City values (014, 22);
+insert into Plan_City values (014, 23);
+insert into Plan_City values (014, 24);
+insert into Plan_City values (014, 25);
+insert into Plan_City values (014, 26);
 
-insert into Plan_City values (0015, 27);
-insert into Plan_City values (0015, 28);
-insert into Plan_City values (0015, 29);
-insert into Plan_City values (0015, 30);
+insert into Plan_City values (015, 27);
+insert into Plan_City values (015, 28);
+insert into Plan_City values (015, 29);
+insert into Plan_City values (015, 30);
 
-insert into Plan_City values (0016, 31);
-insert into Plan_City values (0017, 32);
+insert into Plan_City values (016, 31);
+insert into Plan_City values (017, 32);
 
 
 #Flight
 #airplane varchar(50), city varchar(50) ,filghtID int
+
+
+#Plan_StartDate
+#planID int, start_date date
+insert into Plan_StartDate values (001, 2018-03-1);
+insert into Plan_StartDate values (001, 2018-04-1);
+insert into Plan_StartDate values (001, 2018-05-1);
+insert into Plan_StartDate values (001, 2018-06-1);
+insert into Plan_StartDate values (001, 2018-07-1);
+insert into Plan_StartDate values (001, 2018-08-1);
+insert into Plan_StartDate values (001, 2018-09-1);
+insert into Plan_StartDate values (001, 2018-10-1);
+insert into Plan_StartDate values (001, 2018-11-1);
+insert into Plan_StartDate values (001, 2018-12-1);
+
+insert into Plan_StartDate values (002, 2018-08-1);
+insert into Plan_StartDate values (002, 2018-09-1);
+insert into Plan_StartDate values (002, 2018-10-1);
+insert into Plan_StartDate values (002, 2018-11-1);
+insert into Plan_StartDate values (002, 2018-12-1);
 
 
 
