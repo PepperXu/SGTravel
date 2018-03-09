@@ -29,5 +29,5 @@
     <servlet-name>SearchMultiValueParameter</servlet-name>
     <url-pattern>/searchmvp</url-pattern>
   </servlet-mapping>
-MultiValue
+
 </web-app>

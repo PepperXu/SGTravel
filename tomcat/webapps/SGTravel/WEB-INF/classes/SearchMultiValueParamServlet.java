@@ -3,10 +3,10 @@ import java.io.*;
 import java.sql.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
- 
+
  @WebServlet("/searchmvp")
 public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and above only
- 
+
    // The doGet() runs once per HTTP GET request to this servlet.
    @Override
    public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -15,7 +15,7 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
       response.setContentType("text/html");
       // Get a output writer to write the response message into the network socket
       PrintWriter out = response.getWriter();
- 
+
       Connection conn = null;
       Statement stmt = null;
       try {
@@ -24,17 +24,20 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
          Class.forName("com.mysql.jdbc.Driver");  // Needed for JDK9/Tomcat9
          conn = DriverManager.getConnection(
             "jdbc:mysql://localhost:3306/SGTravel", "billy ", "1234");  // <<== Check
- 
+
          // Step 2: Create a "Statement" object inside the "Connection"
          stmt = conn.createStatement();
- 
-         // Step 3: Execute a SQL SELECT query
-         String[] travelPlans = request.getParameterValues("plan");  // Returns an array
 
-          if (travelPlans == null) {
-            out.println("<h2>Please go back and search again.</h2>");
-            return; // Exit doGet()
-         } 
+         // Step 3: Execute a SQL SELECT query
+         //String[] travelPlans = request.getParameterValues("plan");  // Returns an array
+//
+         // if (travelPlans == null) {
+         //   out.println("<h2>Please go back and search again.</h2>");
+         //   return; // Exit doGet()
+         //}
+
+         String date = request.getParameter("date");
+
 
          String sqlStr = "SELECT * FROM Plan WHERE city = "
                + "'" + request.getParameter("city") + "'" + "AND startDate ="+ "'" + request.getParameter("startDate") + "'"
@@ -46,13 +49,13 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
           sqlStr += ", '" + travelPlans[i] + "'";  // Subsequent cities need a leading commas
        }
 
- 
+
          // Print an HTML page as output of query
          out.println("<html><head><title>Search Results</title></head><body>");
          out.println("<h2>Thank you for your search.</h2>");
-         out.println("<p>The cities that you chose are: " + sqlStr + "</p>"); // Echo for debugging
+
          ResultSet rset = stmt.executeQuery(sqlStr); // Send the query to the server
- 
+
          // Step 4: Process the query result
          int count = 0;
          while(rset.next()) {
@@ -68,7 +71,7 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
          }
          out.println("<p>==== " + count + " records found ====</p>");
          out.println("</body></html>");
-     
+
       } catch (SQLException ex) {
          ex.printStackTrace();
      } catch (ClassNotFoundException ex) {

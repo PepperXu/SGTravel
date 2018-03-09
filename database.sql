@@ -1,20 +1,17 @@
-create database if not exist SGTravel;
+create database if not exists SGTravel;
 
-#show database
-use SGTravel
+use SGTravel;
 
 drop table if exists Plan;
 
-create table Plan 
-  ( 
-	planID int,           
-	planTitle varchar(50),
+create table Plan
+  (
+	planID int,
+	planTitle varchar(200),
 	price int,
-	duration int, 
-	remaining_seat int, 
-	country varchar(50),
-	#plan_detail text,
-	img varchar(50),  #?
+	duration int,
+	remaining_seat int,
+	country varchar(50)
    );
 
 drop table if exists Plan_StartDate;
@@ -22,7 +19,7 @@ drop table if exists Plan_StartDate;
 create table Plan_StartDate
 	(
 		planID int,
-		startDate date, 
+		startDate date
 	);
 
 #drop table if exists Country;
@@ -38,7 +35,7 @@ create table City
 	(
 		city varchar(50),
 		contry varchar(50),
-		cityID int;
+		cityID int
 	);
 
 drop table if exists Plan_City;
@@ -46,17 +43,17 @@ drop table if exists Plan_City;
 create table Plan_City
 	(
 		planID int,
-		cityID int,
+		cityID int
 	);
 
 
-drop table if exists Filght;
+drop table if exists Flight;
 
 create table Flight
 	(
 		filghtID int,
-		airplane varchar(50), 
-		city varchar(50)	
+		airplane varchar(50),
+		city varchar(50)
 	);
 
 
@@ -69,15 +66,15 @@ create table User
 		passwords varchar(50)
 	);
 
-drop table if UserSearch;
+drop table if exists UserSearch;
 
 create table UserSearch
 	(
-		country varchar(50)
-		city varchar(50)
+		country varchar(50),
+		city varchar(50),
 		duration int,
 		start_date DATE,
-	    end_date DATE,
+	    end_date DATE
 	);
 
 drop table if exists Comment;
@@ -134,23 +131,23 @@ insert into Plan values(017, '2 Days Australia Tour (Melbourne) )',350,15, 50, '
 
 #Country
 #country varchar(50), continent varchar(50)
-insert into Country values ('China','Asia');
-insert into Country values ('Singapore','Asia');
-insert into Country values ('Thailand','Asia');
+#insert into Country values ('China','Asia');
+#insert into Country values ('Singapore','Asia');
+#insert into Country values ('Thailand','Asia');
+#
+#insert into Country values ('Italy','Europe');
+#insert into Country values ('France','Europe');
+#
+#insert into Country values ('Egypt','Africa');
+#
+#insert into Country values ('Brazil','South America');
+#
+#insert into Country values ('United states','North America');
+#
+#insert into Country values ('Australia ','Australia');
 
-insert into Country values ('Italy','Europe');
-insert into Country values ('France','Europe');
 
-insert into Country values ('Egypt','Africa');
-
-insert into Country values ('Brazil','South America');
-
-insert into Country values ('United states','North America');
-
-insert into Country values ('Australia ','Australia');	
-
-
-#City 
+#City
 #city varchar(50), contry varchar(50),cityID INT
 insert into City values ('Beijing','China',1) ;
 insert into City values ('Shanghai','China',2) ;
@@ -184,7 +181,7 @@ insert into City values ('Sao Paulo','Brazil',21) ;
 insert into City values ('New York','United States',22);
 insert into City values ('Chicago','United States',23);
 insert into City values ('Philadelphia','United States',24);
-insert into City values ('Boston','United States',25)；
+insert into City values ('Boston','United States',25);
 insert into City values ('Washington','United States',26);
 insert into City values ('Los Angeles','United States',27);
 insert into City values ('San Francisco','United States',28);
@@ -199,7 +196,7 @@ insert into City values ('Melbourne','Australia',32);
 
 
 #Plan_City
-#planID INT, cityID INT 
+#planID INT, cityID INT
 #001, 4 Days China Tour (Beijing)
 #002, 3 Days China Tour (Shanghai)
 #003, 2 Days China Tour (Chongqing)
@@ -278,26 +275,25 @@ insert into Plan_City values (017, 32);
 
 #Plan_StartDate
 #planID int, start_date date
-insert into Plan_StartDate values (001, 2018-03-1);
-insert into Plan_StartDate values (001, 2018-04-1);
-insert into Plan_StartDate values (001, 2018-05-1);
-insert into Plan_StartDate values (001, 2018-06-1);
-insert into Plan_StartDate values (001, 2018-07-1);
-insert into Plan_StartDate values (001, 2018-08-1);
-insert into Plan_StartDate values (001, 2018-09-1);
-insert into Plan_StartDate values (001, 2018-10-1);
-insert into Plan_StartDate values (001, 2018-11-1);
-insert into Plan_StartDate values (001, 2018-12-1);
-
-insert into Plan_StartDate values (002, 2018-08-1);
-insert into Plan_StartDate values (002, 2018-09-1);
-insert into Plan_StartDate values (002, 2018-10-1);
-insert into Plan_StartDate values (002, 2018-11-1);
-insert into Plan_StartDate values (002, 2018-12-1);
-
+insert into Plan_StartDate values (001, '2018-03-01');
+insert into Plan_StartDate values (001, '2018-04-01');
+insert into Plan_StartDate values (001, '2018-05-01');
+insert into Plan_StartDate values (001, '2018-06-01');
+insert into Plan_StartDate values (001, '2018-07-01');
+insert into Plan_StartDate values (001, '2018-08-01');
+insert into Plan_StartDate values (001, '2018-09-01');
+insert into Plan_StartDate values (001, '2018-10-01');
+insert into Plan_StartDate values (001, '2018-11-01');
+insert into Plan_StartDate values (001, '2018-12-01');
+insert into Plan_StartDate values (002, '2018-08-01');
+insert into Plan_StartDate values (002, '2018-09-01');
+insert into Plan_StartDate values (002, '2018-10-01');
+insert into Plan_StartDate values (002, '2018-11-01');
+insert into Plan_StartDate values (002, '2018-12-01');
 
 
-	
+
+
 
 
 
