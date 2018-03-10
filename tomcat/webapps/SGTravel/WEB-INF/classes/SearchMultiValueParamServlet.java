@@ -1,8 +1,12 @@
 // Saved as "ebookshop\WEB-INF\classes\QueryServlet.java".
+import java.util.*;
 import java.io.*;
 import java.sql.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.text.ParseException;
 
 public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and above only
 
@@ -39,14 +43,18 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
          //   return; // Exit doGet()
          //}
 
-         //String date = request.getParameter("date");
-         //String[] parts = date.split(" - ");
+         String date = request.getParameter("date");
+         String[] parts = date.split(" - ");
 //
-         //String startDate = parts[0];
-         //String endDate = parts[1];
+         java.util.Date sDate = new SimpleDateFormat("MM/dd/yyyy").parse(parts[0]);
+         java.util.Date eDate = new SimpleDateFormat("MM/dd/yyyy").parse(parts[1]);
 
-         String sqlStr = "SELECT Plan.planID, Plan.planTitle, Plan.country, Plan.price, Plan.duration FROM Plan, Plan_City, City WHERE City.city = "
-               + "'" + city + "'" + " AND Plan_City.cityID = City.cityID AND Plan_City.planID = Plan.planID";
+         java.sql.Date startDate = new java.sql.Date(sDate.getTime());
+         java.sql.Date endDate = new java.sql.Date(eDate.getTime());
+
+         String sqlStr = "SELECT Plan.planID, Plan.planTitle, Plan.country, Plan.price, Plan.duration FROM Plan, Plan_City, City, Plan_Date WHERE City.city = "
+               + "'" + city + "'" + " AND Plan_City.cityID = City.cityID AND Plan_City.planID = Plan.planID AND Plan.planID = Plan_Date.planID AND Plan_Date.startDate >= "
+               + "'" + startDate + "'" + " AND Plan_Date.endDate <= " + "'" + endDate + "'";
 
 
 
@@ -61,6 +69,7 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
          out.println("<html><head><title>Search Results</title></head><body>");
          out.println("<h2>Thank you for your search.</h2>");
          out.println("<p>You query is: " + sqlStr + "</p>");
+         out.println("<p>Start Date: " + startDate + " End Date: " + endDate + "</p>");
          ResultSet rset = stmt.executeQuery(sqlStr); // Send the query to the server
 
          // Step 4: Process the query result
@@ -78,7 +87,12 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
          out.println("<p>==== " + count + " records found ====</p>");
          out.println("</body></html>");
 
-      } catch (SQLException ex) {
+      }
+      catch (ParseException e) {
+        //Handle exception here, most of the time you will just log it.
+          e.printStackTrace();
+      }
+      catch (SQLException ex) {
          ex.printStackTrace();
      } catch (ClassNotFoundException ex) {
         ex.printStackTrace();

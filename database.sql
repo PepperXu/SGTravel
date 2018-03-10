@@ -16,10 +16,13 @@ create table Plan
 
 drop table if exists Plan_StartDate;
 
-create table Plan_StartDate
+drop table if exists Plan_Date;
+
+create table Plan_Date
 	(
 		planID int,
-		startDate date
+		startDate date,
+		endDate date
 	);
 
 #drop table if exists Country;
@@ -275,21 +278,21 @@ insert into Plan_City values (017, 32);
 
 #Plan_StartDate
 #planID int, start_date date
-insert into Plan_StartDate values (001, '2018-03-01');
-insert into Plan_StartDate values (001, '2018-04-01');
-insert into Plan_StartDate values (001, '2018-05-01');
-insert into Plan_StartDate values (001, '2018-06-01');
-insert into Plan_StartDate values (001, '2018-07-01');
-insert into Plan_StartDate values (001, '2018-08-01');
-insert into Plan_StartDate values (001, '2018-09-01');
-insert into Plan_StartDate values (001, '2018-10-01');
-insert into Plan_StartDate values (001, '2018-11-01');
-insert into Plan_StartDate values (001, '2018-12-01');
-insert into Plan_StartDate values (002, '2018-08-01');
-insert into Plan_StartDate values (002, '2018-09-01');
-insert into Plan_StartDate values (002, '2018-10-01');
-insert into Plan_StartDate values (002, '2018-11-01');
-insert into Plan_StartDate values (002, '2018-12-01');
+insert into Plan_Date values (001, '2018-03-01', '2018-03-04');
+insert into Plan_Date values (001, '2018-04-01', '2018-04-04');
+insert into Plan_Date values (001, '2018-05-01', '2018-05-04');
+insert into Plan_Date values (001, '2018-06-01', '2018-06-04');
+insert into Plan_Date values (001, '2018-07-01', '2018-07-04');
+insert into Plan_Date values (001, '2018-08-01', '2018-08-04');
+insert into Plan_Date values (001, '2018-09-01', '2018-09-04');
+insert into Plan_Date values (001, '2018-10-01', '2018-10-04');
+insert into Plan_Date values (001, '2018-11-01', '2018-11-04');
+insert into Plan_Date values (001, '2018-12-01', '2018-12-04');
+insert into Plan_Date values (002, '2018-08-01', '2018-08-04');
+insert into Plan_Date values (002, '2018-09-01', '2018-09-04');
+insert into Plan_Date values (002, '2018-10-01', '2018-10-04');
+insert into Plan_Date values (002, '2018-11-01', '2018-11-04');
+insert into Plan_Date values (002, '2018-12-01', '2018-12-04');
 
 
 
