@@ -17,6 +17,15 @@
     <servlet-class>SearchMultiValueParamServlet</servlet-class>
   </servlet>
 
+  <servlet>
+      <servlet-name>AccountRegistration</servlet-name>
+      <servlet-class>RegisterServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+      <servlet-name>AccountLogin</servlet-name>
+      <servlet-class>LoginServlet</servlet-class>
+  </servlet>
   <!-- Note: All <servlet> elements must be placed
        in front of <servlet-mapping> elements -->
 
@@ -29,5 +38,12 @@
     <servlet-name>SearchMultiValueParameter</servlet-name>
     <url-pattern>/searchmvp</url-pattern>
   </servlet-mapping>
-
+  <servlet-mapping>
+    <servlet-name>AccountRegistration</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AccountLogin</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
 </web-app>

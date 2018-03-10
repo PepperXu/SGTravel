@@ -52,7 +52,7 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
          java.sql.Date startDate = new java.sql.Date(sDate.getTime());
          java.sql.Date endDate = new java.sql.Date(eDate.getTime());
 
-         String sqlStr = "SELECT Plan.planID, Plan.planTitle, Plan.country, Plan.price, Plan.duration FROM Plan, Plan_City, City, Plan_Date WHERE City.city = "
+         String sqlStr = "SELECT Plan.planID, Plan.planTitle, Plan.country, Plan.price, Plan.duration, Plan_Date.startDate, Plan_Date.endDate FROM Plan, Plan_City, City, Plan_Date WHERE City.city = "
                + "'" + city + "'" + " AND Plan_City.cityID = City.cityID AND Plan_City.planID = Plan.planID AND Plan.planID = Plan_Date.planID AND Plan_Date.startDate >= "
                + "'" + startDate + "'" + " AND Plan_Date.endDate <= " + "'" + endDate + "'";
 
@@ -76,11 +76,8 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
          int count = 0;
          while(rset.next()) {
             // Print a paragraph <p>...</p> for each row
-            out.println( "<h5>planID:"+ rset.getInt("planID") + "</h5> "
-                  + "<br/>" + "<h5>planTitle:"+rset.getString("planTitle") + "</h5>"
-                  + "<br/>" + "<h5>Country: "+ rset.getString("country") + "</h5>"
-                  + "<br/>"+ "<h5>Price: $" + rset.getInt("price") + "per person. </h5>"
-                  + "<br/>" +"<h5>Duration:" + rset.getInt("duration") + "</h5>"
+            out.println( "<p>planID: "+ rset.getInt("planID") + "</p> "
+                  + "<p/>" + "<h5>planTitle: "+rset.getString("planTitle") + "</p>"
                    );
             ++count;
          }

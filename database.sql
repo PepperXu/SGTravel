@@ -7,6 +7,7 @@ drop table if exists Plan;
 create table Plan
   (
 	planID int,
+	startCity varchar(50),
 	planTitle varchar(200),
 	price int,
 	duration int,
@@ -37,7 +38,7 @@ drop table if exists City;
 create table City
 	(
 		city varchar(50),
-		contry varchar(50),
+		country varchar(50),
 		cityID int
 	);
 
@@ -54,30 +55,39 @@ drop table if exists Flight;
 
 create table Flight
 	(
-		filghtID int,
+		filghtNumber int,
 		airplane varchar(50),
-		city varchar(50)
+		departureCity varchar(50),
+		departureTime DATETIME,
+		arrivalCity varchar(50),
+		arrivalTime DATETIME
 	);
 
+drop table if exists Plan_Flight;
+
+create table Plan_Flight
+	(
+		planID int,
+		flightNumber int
+	);
 
 drop table if exists User;
 
-create table User
+drop table if exists Users;
+
+create table Users
 	(
-		userID int,
-		username varchar(50),
-		passwords varchar(50)
+		username char(16) not null,
+		password char(41) not null,
+		primary key (username)
 	);
 
-drop table if exists UserSearch;
+drop table if exists Plan_User;
 
-create table UserSearch
+create table Plan_Users
 	(
-		country varchar(50),
-		city varchar(50),
-		duration int,
-		start_date DATE,
-	    end_date DATE
+		planID int,
+		username char(16)
 	);
 
 drop table if exists Comment;
@@ -87,7 +97,7 @@ create table Comment
 		userID int,
 		planID int,
 		username varchar(50),
-		comment_detail varchar(70),
+		content varchar(70),
 		mark int
 	);
 
@@ -102,32 +112,30 @@ create table Cart
 #Plan
 #planID INT, planTitle varchar(50), duration INT,  remaining_seat INT, country varchar(50), plan_detail varchar(200)
 
-insert into Plan values(001, '4 Days China Tour (Beijing)',600, 3, 100, 'China');
-insert into Plan values(002, '3 Days China Tour (Shanghai) ',500, 3, 100, 'China');
-insert into Plan values(003, '2 Days China Tour (Chongqing)',400, 2, 100, 'China');
+insert into Plan values(001, 'Singapore','4 Days China Tour (Beijing)',600, 3, 100, 'China');
+insert into Plan values(002, 'Singapore','3 Days China Tour (Shanghai) ',500, 3, 100, 'China');
+insert into Plan values(003, 'New York','2 Days China Tour (Chongqing)',400, 2, 100, 'China');
 
-insert into Plan values(004, '3 Days Singapore Tour',600, 3, 100, 'Singapore');
+insert into Plan values(004, 'New York','3 Days Singapore Tour',600, 3, 100, 'Singapore');
 
-insert into Plan values(005, '5 Days Thailand Tour (Bangkok + Chiang Mai + Pattaya)',600, 5, 30, 'Thailand') ;
+insert into Plan values(005, 'London','5 Days Thailand Tour (Bangkok + Chiang Mai + Pattaya)',600, 5, 30, 'Thailand') ;
 
-insert into Plan values(006, '4 Days Italy Tour (Rome + Milan + Florence)',600, 4, 100, 'Italy' ) ;
-insert into Plan values(007, '9 Days Italy Tour (Rome + Milan + Florence + Venice + Palermo)',1200, 9, 30, 'Italy' ) ;
+insert into Plan values(006, 'London','4 Days Italy Tour (Rome + Milan + Florence)',600, 4, 100, 'Italy' ) ;
+insert into Plan values(007, 'Paris','9 Days Italy Tour (Rome + Milan + Florence + Venice + Palermo)',1200, 9, 30, 'Italy' ) ;
 
-insert into Plan values(008, '9 Days France Tour (Bordeaux + Paris + Lille + Nice + Lyon)',1300,9, 30, 'France' ) ;
-insert into Plan values(009, '2 Days France Tour (Paris)',300, 2, 100, 'France' ) ;
-insert into Plan values(010, '1 Days France Tour (Bordeaux )',150,1, 100, 'France') ;
+insert into Plan values(008, 'Singapore','9 Days France Tour (Bordeaux + Paris + Lille + Nice + Lyon)',1300,9, 30, 'France' ) ;
+insert into Plan values(009, 'Sydney','2 Days France Tour (Paris)',300, 2, 100, 'France' ) ;
+insert into Plan values(010, 'Sydney','1 Days France Tour (Bordeaux )',150,1, 100, 'France') ;
 
-insert into Plan values(011, '1 Days Egypt Tour (Cairo)',120,1, 70, 'Egypt') ;
-insert into Plan values(012, '1 Days Egypt Tour (Alexandria)',150,1, 70, 'Egypt') ;
+insert into Plan values(011, 'Tokyo','1 Days Egypt Tour (Cairo)',120,1, 70, 'Egypt') ;
+insert into Plan values(012, 'Tokyo','1 Days Egypt Tour (Alexandria)',150,1, 70, 'Egypt') ;
 
-insert into Plan values(013, '4 Days France Tour (Rio de Janeiro + Sao Paulo)',500,4, 70, 'Brazil') ;
+insert into Plan values(013, 'Beijing','4 Days France Tour (Rio de Janeiro + Sao Paulo)',500,4, 70, 'Brazil') ;
 
-insert into Plan values(014, '15 Days United States Tour (New York + Chicago + Philadelphia + Boston + Washington) )',2000,15, 50, 'United States') ;
-insert into Plan values(015, '15 Days United States Tour (Los Angeles + San Francisco + Las Vegas + Yellowstone Park) )',2000,15, 50, 'United States') ;
-
-
-insert into Plan values(016, '2 Days Australia Tour (Sydney) )',350,15, 50, 'Australia') ;
-insert into Plan values(017, '2 Days Australia Tour (Melbourne) )',350,15, 50, 'Australia') ;
+insert into Plan values(014, 'Beijing','15 Days United States Tour (New York + Chicago + Philadelphia + Boston + Washington) )',2000,15, 50, 'United States') ;
+insert into Plan values(015, 'Shanghai','15 Days United States Tour (Los Angeles + San Francisco + Las Vegas + Yellowstone Park) )',2000,15, 50, 'United States') ;
+insert into Plan values(016, 'Shanghai','2 Days Australia Tour (Sydney) )',350,15, 50, 'Australia') ;
+insert into Plan values(017, 'Paris','2 Days Australia Tour (Melbourne) )',350,15, 50, 'Australia') ;
 
 
 
@@ -293,8 +301,6 @@ insert into Plan_Date values (002, '2018-09-01', '2018-09-04');
 insert into Plan_Date values (002, '2018-10-01', '2018-10-04');
 insert into Plan_Date values (002, '2018-11-01', '2018-11-04');
 insert into Plan_Date values (002, '2018-12-01', '2018-12-04');
-
-
 
 
 
