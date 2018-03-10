@@ -9,9 +9,7 @@ create table Plan
 	planID int,
 	startCity varchar(50),
 	planTitle varchar(200),
-	price int,
 	duration int,
-	remaining_seat int,
 	country varchar(50)
    );
 
@@ -21,9 +19,12 @@ drop table if exists Plan_Date;
 
 create table Plan_Date
 	(
+		itemID int,
 		planID int,
 		startDate date,
-		endDate date
+		endDate date,
+		remaining_seat int,
+		price int
 	);
 
 #drop table if exists Country;
@@ -86,7 +87,7 @@ drop table if exists Plan_User;
 
 create table Plan_Users
 	(
-		planID int,
+		itemID int,
 		username char(16)
 	);
 
@@ -112,30 +113,30 @@ create table Cart
 #Plan
 #planID INT, planTitle varchar(50), duration INT,  remaining_seat INT, country varchar(50), plan_detail varchar(200)
 
-insert into Plan values(001, 'Singapore','4 Days China Tour (Beijing)',600, 3, 100, 'China');
-insert into Plan values(002, 'Singapore','3 Days China Tour (Shanghai) ',500, 3, 100, 'China');
-insert into Plan values(003, 'New York','2 Days China Tour (Chongqing)',400, 2, 100, 'China');
+insert into Plan values(001, 'Singapore','4 Days China Tour (Beijing)', 3, 'China');
+insert into Plan values(002, 'Singapore','3 Days China Tour (Shanghai) ', 3, 'China');
+insert into Plan values(003, 'New York','2 Days China Tour (Chongqing)', 2, 'China');
 
-insert into Plan values(004, 'New York','3 Days Singapore Tour',600, 3, 100, 'Singapore');
+insert into Plan values(004, 'New York','3 Days Singapore Tour', 3, 'Singapore');
 
-insert into Plan values(005, 'London','5 Days Thailand Tour (Bangkok + Chiang Mai + Pattaya)',600, 5, 30, 'Thailand') ;
+insert into Plan values(005, 'London','5 Days Thailand Tour (Bangkok + Chiang Mai + Pattaya)', 5, 'Thailand') ;
 
-insert into Plan values(006, 'London','4 Days Italy Tour (Rome + Milan + Florence)',600, 4, 100, 'Italy' ) ;
-insert into Plan values(007, 'Paris','9 Days Italy Tour (Rome + Milan + Florence + Venice + Palermo)',1200, 9, 30, 'Italy' ) ;
+insert into Plan values(006, 'London','4 Days Italy Tour (Rome + Milan + Florence)', 4, 'Italy' ) ;
+insert into Plan values(007, 'Paris','9 Days Italy Tour (Rome + Milan + Florence + Venice + Palermo)', 9, 'Italy' ) ;
 
-insert into Plan values(008, 'Singapore','9 Days France Tour (Bordeaux + Paris + Lille + Nice + Lyon)',1300,9, 30, 'France' ) ;
-insert into Plan values(009, 'Sydney','2 Days France Tour (Paris)',300, 2, 100, 'France' ) ;
-insert into Plan values(010, 'Sydney','1 Days France Tour (Bordeaux )',150,1, 100, 'France') ;
+insert into Plan values(008, 'Singapore','9 Days France Tour (Bordeaux + Paris + Lille + Nice + Lyon)', 9, 'France' ) ;
+insert into Plan values(009, 'Sydney','2 Days France Tour (Paris)', 2, 'France' ) ;
+insert into Plan values(010, 'Sydney','1 Days France Tour (Bordeaux )', 1, 'France') ;
 
-insert into Plan values(011, 'Tokyo','1 Days Egypt Tour (Cairo)',120,1, 70, 'Egypt') ;
-insert into Plan values(012, 'Tokyo','1 Days Egypt Tour (Alexandria)',150,1, 70, 'Egypt') ;
+insert into Plan values(011, 'Tokyo','1 Days Egypt Tour (Cairo)', 1, 'Egypt') ;
+insert into Plan values(012, 'Tokyo','1 Days Egypt Tour (Alexandria)', 1, 'Egypt') ;
 
-insert into Plan values(013, 'Beijing','4 Days France Tour (Rio de Janeiro + Sao Paulo)',500,4, 70, 'Brazil') ;
+insert into Plan values(013, 'Beijing','4 Days France Tour (Rio de Janeiro + Sao Paulo)', 4, 'Brazil') ;
 
-insert into Plan values(014, 'Beijing','15 Days United States Tour (New York + Chicago + Philadelphia + Boston + Washington) )',2000,15, 50, 'United States') ;
-insert into Plan values(015, 'Shanghai','15 Days United States Tour (Los Angeles + San Francisco + Las Vegas + Yellowstone Park) )',2000,15, 50, 'United States') ;
-insert into Plan values(016, 'Shanghai','2 Days Australia Tour (Sydney) )',350,15, 50, 'Australia') ;
-insert into Plan values(017, 'Paris','2 Days Australia Tour (Melbourne) )',350,15, 50, 'Australia') ;
+insert into Plan values(014, 'Beijing','15 Days United States Tour (New York + Chicago + Philadelphia + Boston + Washington)', 15, 'United States') ;
+insert into Plan values(015, 'Shanghai','15 Days United States Tour (Los Angeles + San Francisco + Las Vegas + Yellowstone Park)', 15, 'United States') ;
+insert into Plan values(016, 'Shanghai','2 Days Australia Tour (Sydney)', 15, 'Australia') ;
+insert into Plan values(017, 'Paris','2 Days Australia Tour (Melbourne)', 15, 'Australia') ;
 
 
 
@@ -286,23 +287,21 @@ insert into Plan_City values (017, 32);
 
 #Plan_StartDate
 #planID int, start_date date
-insert into Plan_Date values (001, '2018-03-01', '2018-03-04');
-insert into Plan_Date values (001, '2018-04-01', '2018-04-04');
-insert into Plan_Date values (001, '2018-05-01', '2018-05-04');
-insert into Plan_Date values (001, '2018-06-01', '2018-06-04');
-insert into Plan_Date values (001, '2018-07-01', '2018-07-04');
-insert into Plan_Date values (001, '2018-08-01', '2018-08-04');
-insert into Plan_Date values (001, '2018-09-01', '2018-09-04');
-insert into Plan_Date values (001, '2018-10-01', '2018-10-04');
-insert into Plan_Date values (001, '2018-11-01', '2018-11-04');
-insert into Plan_Date values (001, '2018-12-01', '2018-12-04');
-insert into Plan_Date values (002, '2018-08-01', '2018-08-04');
-insert into Plan_Date values (002, '2018-09-01', '2018-09-04');
-insert into Plan_Date values (002, '2018-10-01', '2018-10-04');
-insert into Plan_Date values (002, '2018-11-01', '2018-11-04');
-insert into Plan_Date values (002, '2018-12-01', '2018-12-04');
-
-
+insert into Plan_Date values (001001, 001, '2018-03-01', '2018-03-04', 0, 800);
+insert into Plan_Date values (001002, 001, '2018-04-01', '2018-04-04', 5, 800);
+insert into Plan_Date values (001003, 001, '2018-05-01', '2018-05-04', 10, 780);
+insert into Plan_Date values (001004, 001, '2018-06-01', '2018-06-04', 45, 700);
+insert into Plan_Date values (001005, 001, '2018-07-01', '2018-07-04', 50, 800);
+insert into Plan_Date values (001006, 001, '2018-08-01', '2018-08-04', 50, 800);
+insert into Plan_Date values (001007, 001, '2018-09-01', '2018-09-04', 50, 700);
+insert into Plan_Date values (001008, 001, '2018-10-01', '2018-10-04', 50, 700);
+insert into Plan_Date values (001009, 001, '2018-11-01', '2018-11-04', 50, 700);
+insert into Plan_Date values (001010, 001, '2018-12-01', '2018-12-04', 50, 700);
+insert into Plan_Date values (014001, 014, '2018-08-01', '2018-08-04', 15, 2000);
+insert into Plan_Date values (014002, 014, '2018-09-01', '2018-09-04', 20, 2000);
+insert into Plan_Date values (014003, 014, '2018-10-01', '2018-10-04', 20, 1800);
+insert into Plan_Date values (014004, 014, '2018-11-01', '2018-11-04', 20, 1800);
+insert into Plan_Date values (014005, 014, '2018-12-01', '2018-12-04', 20, 1800);
 
 
 

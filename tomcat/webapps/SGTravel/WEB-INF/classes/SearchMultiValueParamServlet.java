@@ -27,7 +27,19 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
          Class.forName("com.mysql.jdbc.Driver");  // Needed for JDK9/Tomcat9
          conn = DriverManager.getConnection(
             "jdbc:mysql://localhost:3306/SGTravel", "billy", "1234");  // <<== Check
+         out.println("<html><head><title>Search Results</title></head><body>");
+          String userName;
 
+         HttpSession session = request.getSession(false);
+         if (session == null) {
+            out.println("<h3>You have not <a href='login.html'>Login</a>!</h3>");
+         } else {
+            synchronized (session) {
+               userName = (String) session.getAttribute("username");
+               out.println("<h3>Hello! " + userName + "</h3>");
+               out.println("<p><a href='logout'>Logout</a></p>");
+            }
+          }
          // Step 2: Create a "Statement" object inside the "Connection"
          stmt = conn.createStatement();
          String city = request.getParameter("city");
@@ -52,7 +64,7 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
          java.sql.Date startDate = new java.sql.Date(sDate.getTime());
          java.sql.Date endDate = new java.sql.Date(eDate.getTime());
 
-         String sqlStr = "SELECT Plan.planID, Plan.planTitle, Plan.country, Plan.price, Plan.duration, Plan_Date.startDate, Plan_Date.endDate FROM Plan, Plan_City, City, Plan_Date WHERE City.city = "
+         String sqlStr = "SELECT Plan.planID, Plan.planTitle, Plan.country, Plan_Date.price, Plan.duration, Plan_Date.startDate, Plan_Date.endDate, Plan_Date.remaining_seat, Plan_Date.itemID FROM Plan, Plan_City, City, Plan_Date WHERE City.city = "
                + "'" + city + "'" + " AND Plan_City.cityID = City.cityID AND Plan_City.planID = Plan.planID AND Plan.planID = Plan_Date.planID AND Plan_Date.startDate >= "
                + "'" + startDate + "'" + " AND Plan_Date.endDate <= " + "'" + endDate + "'";
 
@@ -66,7 +78,7 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
 
 
          // Print an HTML page as output of query
-         out.println("<html><head><title>Search Results</title></head><body>");
+
          out.println("<h2>Thank you for your search.</h2>");
          out.println("<p>You query is: " + sqlStr + "</p>");
          out.println("<p>Start Date: " + startDate + " End Date: " + endDate + "</p>");
@@ -76,9 +88,20 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
          int count = 0;
          while(rset.next()) {
             // Print a paragraph <p>...</p> for each row
-            out.println( "<p>planID: "+ rset.getInt("planID") + "</p> "
-                  + "<p/>" + "<h5>planTitle: "+rset.getString("planTitle") + "</p>"
-                   );
+            out.println("<form method='post' action='detail'>");
+            out.println("<input type='hidden' name='planID' value=" + rset.getInt("planID") + " />");
+            out.println("<p>planID: "+ rset.getInt("planID") + "</p> ");
+            out.println("<input type='submit' value='" + rset.getString("planTitle") + "' />");
+            out.println("<p>Duration: "+rset.getDate("startDate")+" - "+rset.getDate("endDate")+"</p>");
+            out.println("<p>$"+rset.getInt("price")+"</p>");
+            out.println("<p>"+rset.getInt("remaining_seat")+" seats remaining. </p>");
+            out.println("</form>");
+            out.println("<form method='post' action='checkout'>");
+            out.println("<input type='hidden' name='itemID' value=" + rset.getInt("itemID") + " />");
+            out.println("<input type='submit' value='join' />");
+            out.println("</form>");
+            out.println("<br />");
+            out.println("<p>===================================</p>");
             ++count;
          }
          out.println("<p>==== " + count + " records found ====</p>");
@@ -103,6 +126,11 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
             ex.printStackTrace();
          }
       }
+   }
+   @Override
+   protected void doPost(HttpServletRequest request, HttpServletResponse response)
+           throws ServletException, IOException {
+      doGet(request, response);
    }
 }
 

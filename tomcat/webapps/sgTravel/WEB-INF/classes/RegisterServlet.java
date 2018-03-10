@@ -31,7 +31,7 @@ public class RegisterServlet extends HttpServlet {  // JDK 6 and above only
          String confirmPassword = request.getParameter("confirm_password");
          boolean hasUserName = userName != null && ((userName = userName.trim()).length() > 0);
          boolean hasPassword = password != null && ((password = password.trim()).length() > 0);
-         boolean samePassword = password == confirmPassword;
+         boolean samePassword = password.equals(confirmPassword);
 
          if (!hasUserName) {
             out.println("<h3>Please Enter Your username!</h3>");
