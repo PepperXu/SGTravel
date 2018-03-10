@@ -113,7 +113,7 @@ create table Cart
 #Plan
 #planID INT, planTitle varchar(50), duration INT,  remaining_seat INT, country varchar(50), plan_detail varchar(200)
 
-insert into Plan values(001, 'Singapore','4 Days China Tour (Beijing)', 3, 'China');
+insert into Plan values(001, 'Singapore','4 Days China Tour 4 Days China Tour', 4, 'China');
 insert into Plan values(002, 'Singapore','3 Days China Tour (Shanghai) ', 3, 'China');
 insert into Plan values(003, 'New York','2 Days China Tour (Chongqing)', 2, 'China');
 
@@ -135,8 +135,8 @@ insert into Plan values(013, 'Beijing','4 Days France Tour (Rio de Janeiro + Sao
 
 insert into Plan values(014, 'Beijing','15 Days United States Tour (New York + Chicago + Philadelphia + Boston + Washington)', 15, 'United States') ;
 insert into Plan values(015, 'Shanghai','15 Days United States Tour (Los Angeles + San Francisco + Las Vegas + Yellowstone Park)', 15, 'United States') ;
-insert into Plan values(016, 'Shanghai','2 Days Australia Tour (Sydney)', 15, 'Australia') ;
-insert into Plan values(017, 'Paris','2 Days Australia Tour (Melbourne)', 15, 'Australia') ;
+insert into Plan values(016, 'Shanghai','2 Days Australia Tour (Sydney)', 2, 'Australia') ;
+insert into Plan values(017, 'Paris','2 Days Australia Tour (Melbourne)', 2, 'Australia') ;
 
 
 
