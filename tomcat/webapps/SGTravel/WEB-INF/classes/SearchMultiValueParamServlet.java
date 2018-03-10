@@ -55,11 +55,12 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
          //   return; // Exit doGet()
          //}
 
-         String date = request.getParameter("date");
-         String[] parts = date.split(" - ");
+         String date1 = request.getParameter("startDate");
+         String date2 = request.getParameter("endDate");
+
 //
-         java.util.Date sDate = new SimpleDateFormat("MM/dd/yyyy").parse(parts[0]);
-         java.util.Date eDate = new SimpleDateFormat("MM/dd/yyyy").parse(parts[1]);
+         java.util.Date sDate = new SimpleDateFormat("MM/dd/yyyy").parse(date1);
+         java.util.Date eDate = new SimpleDateFormat("MM/dd/yyyy").parse(date2);
 
          java.sql.Date startDate = new java.sql.Date(sDate.getTime());
          java.sql.Date endDate = new java.sql.Date(eDate.getTime());

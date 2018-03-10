@@ -41,6 +41,11 @@
       <servlet-name>UserCheckOut</servlet-name>
       <servlet-class>CheckOutServlet</servlet-class>
   </servlet>
+
+  <servlet>
+      <servlet-name>Index</servlet-name>
+      <servlet-class>MainServlet</servlet-class>
+  </servlet>
   <!-- Note: All <servlet> elements must be placed
        in front of <servlet-mapping> elements -->
 
@@ -73,4 +78,9 @@
     <servlet-name>UserCheckOut</servlet-name>
     <url-pattern>/checkout</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Index</servlet-name>
+    <url-pattern>/index</url-pattern>
+  </servlet-mapping>
+
 </web-app>
