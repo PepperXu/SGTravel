@@ -448,3 +448,13 @@
 0:0:0:0:0:0:0:1 - - [11/Mar/2018:01:00:57 +0800] "GET /sgTravel/images/travel/usa.jpg HTTP/1.1" 206 1
 0:0:0:0:0:0:0:1 - - [11/Mar/2018:01:00:57 +0800] "GET /sgTravel/images/01.jpg HTTP/1.1" 404 1103
 0:0:0:0:0:0:0:1 - - [11/Mar/2018:01:00:57 +0800] "GET /sgTravel/img/hotdeals-bg.jpg HTTP/1.1" 404 1109
+0:0:0:0:0:0:0:1 - - [11/Mar/2018:01:02:59 +0800] "GET /sgTravel/css/style.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [11/Mar/2018:01:02:59 +0800] "GET /sgTravel/css/font-awesome.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [11/Mar/2018:01:02:59 +0800] "GET /sgTravel/lib/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [11/Mar/2018:01:02:59 +0800] "GET /sgTravel/lib/animate/animate.min.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [11/Mar/2018:01:02:59 +0800] "GET /sgTravel/lib/font-awesome/css/font-awesome.min.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [11/Mar/2018:01:02:59 +0800] "GET /sgTravel/lib/ionicons/css/ionicons.min.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [11/Mar/2018:01:02:59 +0800] "GET /sgTravel/css/jquery-ui.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [11/Mar/2018:01:02:59 +0800] "GET /sgTravel/lib/owlcarousel/assets/owl.carousel.min.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [11/Mar/2018:01:02:59 +0800] "GET /sgTravel/lib/lightbox/css/lightbox.min.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [11/Mar/2018:01:02:59 +0800] "GET /sgTravel/lib/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 404 1137
