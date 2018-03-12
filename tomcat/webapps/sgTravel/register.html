@@ -60,7 +60,7 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="index1.html">Search</a></li>
+          <li class="menu-active"><a href="index.html">Search</a></li>
            <li class="menu-has-children"><a href="service.html">Service</a>
             <ul>
               <li><a href="service.html">Travel</a></li>
@@ -105,20 +105,27 @@
 <!--=====================
 	Register
 ======================-->
-<section id= "register">
+<section id= "loginregister">
 	<div class = "container">
 		<div class="section-header">
-		    <h3>Register</h3>
-		<span>or <a href="login.html">login here</a></span>
+			<br/>
+		    <h3>Register </h3>
 		</div>
+		<p><span> or <a href="login.html">login here</a></span> </p>
+		
 
 
 <form action="register" method="POST">
+     <div class= "center">
+		<input type="text" placeholder="Enter your username" name="email"><br/><br>
+		<input type="password" placeholder="and password" name="password"><br/><br>
+		<input type="password" placeholder="confirm password" name="confirm_password"><br></br/>
 
-		<input type="text" placeholder="Enter your username" name="email">
-		<input type="password" placeholder="and password" name="password">
-		<input type="password" placeholder="confirm password" name="confirm_password">
+</div>
+<div class = "button" align="center">
+
 		<input type="submit">
+	</div>
 
 	</form>
 </section>
@@ -127,9 +134,24 @@
 
 
 
+<!--=================
+	Empty Session
+  ============================-->
+<section>
+	<div class="bottom">
+	</div>
+
+</section>
 
 
-
-
+<!--==========================
+    Footer
+  ============================-->
+	
+	<div class="footer">
+		<p> IM2073 Course Project: Yet Another Trip Advisor.<br/>Presented by Xu Peisen and Huang Xinwei <br/><br/></p>
+	</div>
+	
+	
 </body>
 </html>
