@@ -19,7 +19,7 @@ public class LogoutServlet extends HttpServlet {
          } else {
             session.invalidate();
             out.println("<p>Bye!</p>");
-            out.println("<p><a href='index.html'>Back to Main</a></p>");
+            out.println("<p><a href='index'>Back to Main</a></p>");
          }
          out.println("</body></html>");
       } finally {

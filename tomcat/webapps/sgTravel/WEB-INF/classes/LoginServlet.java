@@ -60,7 +60,7 @@ public class LoginServlet extends HttpServlet {
                }
 
                out.println("<p>Hello, " + userName + "!</p>");
-               out.println("<p><a href='index.html'>Back to main</a></p>");
+               out.println("<p><a href='index'>Back to main</a></p>");
             }
          }
          out.println("</body></html>");
