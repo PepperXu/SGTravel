@@ -504,3 +504,13 @@
 0:0:0:0:0:0:0:1 - - [12/Mar/2018:21:34:36 +0800] "GET /SGTravel/lib/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 404 1137
 0:0:0:0:0:0:0:1 - - [12/Mar/2018:21:35:00 +0800] "GET /SGTravel/searchmvp?startCity=Singapore&city=Beijing&startDate=03%2F12%2F2018&endDate=04%2F06%2F2018&numTravellers=4 HTTP/1.1" 200 -
 >>>>>>> afa65d8cf7048b53b1a1c95bc8ed31da505e3fde
+0:0:0:0:0:0:0:1 - - [12/Mar/2018:22:44:15 +0800] "GET /SGTravel/index.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [12/Mar/2018:22:44:15 +0800] "GET /SGTravel/css/style.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [12/Mar/2018:22:44:15 +0800] "GET /SGTravel/images/travel/thai.jpg HTTP/1.1" 206 1
+0:0:0:0:0:0:0:1 - - [12/Mar/2018:22:44:15 +0800] "GET /SGTravel/images/travel/shanghai.jpg HTTP/1.1" 206 1
+0:0:0:0:0:0:0:1 - - [12/Mar/2018:22:44:15 +0800] "GET /SGTravel/images/travel/usa.jpg HTTP/1.1" 206 1
+0:0:0:0:0:0:0:1 - - [12/Mar/2018:22:44:25 +0800] "GET /SGTravel/searchmvp?startCity=Singapore&city=Beijing&startDate=03%2F12%2F2018&endDate=05%2F05%2F2018&numTravellers=4 HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [12/Mar/2018:22:47:08 +0800] "GET /SGTravel/index HTTP/1.1" 200 13572
+0:0:0:0:0:0:0:1 - - [12/Mar/2018:22:47:08 +0800] "GET /SGTravel/images/travel/thai.jpg HTTP/1.1" 206 1
+0:0:0:0:0:0:0:1 - - [12/Mar/2018:22:47:09 +0800] "GET /SGTravel/images/travel/shanghai.jpg HTTP/1.1" 206 1
+0:0:0:0:0:0:0:1 - - [12/Mar/2018:22:47:09 +0800] "GET /SGTravel/images/travel/usa.jpg HTTP/1.1" 206 1
