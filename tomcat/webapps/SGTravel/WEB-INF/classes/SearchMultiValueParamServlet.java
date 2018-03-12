@@ -36,14 +36,16 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
          } else {
             synchronized (session) {
                userName = (String) session.getAttribute("username");
-               out.println("<h3>Hello! " + userName + "</h3>");
+               out.println("<h3>Hello! <a href='account'>" + userName + "</a></h3>");
                out.println("<p><a href='logout'>Logout</a></p>");
             }
           }
          // Step 2: Create a "Statement" object inside the "Connection"
          stmt = conn.createStatement();
+         String startCity = request.getParameter("startCity");
          String city = request.getParameter("city");
-         if (city == null) {
+         int numOfTravellers = Integer.parseInt(request.getParameter("numTravellers"));
+         if (city == null || startCity == null) {
             out.println("<h2>Please go back and select an city</h2>");
             return; // Exit doGet()
         }
@@ -64,10 +66,19 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
 
          java.sql.Date startDate = new java.sql.Date(sDate.getTime());
          java.sql.Date endDate = new java.sql.Date(eDate.getTime());
+         String sqlStr = "SELECT Plan.planID, Plan.planTitle, Plan.country, Plan_Date.price, Plan.duration, Plan_Date.startDate, Plan_Date.endDate, Plan_Date.remaining_seat, Plan_Date.itemID FROM Plan, Plan_City, City, Plan_Date WHERE ";
 
-         String sqlStr = "SELECT Plan.planID, Plan.planTitle, Plan.country, Plan_Date.price, Plan.duration, Plan_Date.startDate, Plan_Date.endDate, Plan_Date.remaining_seat, Plan_Date.itemID FROM Plan, Plan_City, City, Plan_Date WHERE City.city = "
-               + "'" + city + "'" + " AND Plan_City.cityID = City.cityID AND Plan_City.planID = Plan.planID AND Plan.planID = Plan_Date.planID AND Plan_Date.startDate >= "
-               + "'" + startDate + "'" + " AND Plan_Date.endDate <= " + "'" + endDate + "'";
+         if(city != "0"){
+               sqlStr += "City.city = "
+               + "'" + city + "'" + " AND Plan_City.cityID = City.cityID AND Plan_City.planID = Plan.planID AND ";
+         }
+         if(startCity != "0"){
+                sqlStr += "Plan.startCity = '" + startCity + "' AND ";
+         }
+
+            sqlStr += "Plan.planID = Plan_Date.planID AND Plan_Date.startDate >= "
+               + "'" + startDate + "'" + " AND Plan_Date.endDate <= " + "'" + endDate + "'" + " AND Plan_Date.remaining_seat >= " + numOfTravellers;
+
 
 
 
@@ -90,7 +101,7 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
          while(rset.next()) {
             // Print a paragraph <p>...</p> for each row
             out.println("<form method='post' action='detail'>");
-            out.println("<input type='hidden' name='planID' value=" + rset.getInt("planID") + " />");
+            out.println("<input type='hidden' name='itemID' value=" + rset.getInt("itemID") + " />");
             out.println("<p>planID: "+ rset.getInt("planID") + "</p> ");
             out.println("<input type='submit' value='" + rset.getString("planTitle") + "' />");
             out.println("<p>Duration: "+rset.getDate("startDate")+" - "+rset.getDate("endDate")+"</p>");

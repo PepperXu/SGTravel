@@ -35,13 +35,13 @@ public class PlanDetailsServlet extends HttpServlet {  // JDK 6 and above only
          } else {
             synchronized (session) {
                userName = (String) session.getAttribute("username");
-               out.println("<h3>Hello! " + userName + "</h3>");
+               out.println("<h3>Hello! <a href='account'>" + userName + "</a></h3>");
                out.println("<p><a href='logout'>Logout</a></p>");
             }
           }
          // Step 3: Execute a SQL SELECT query
-         String sqlStr = "SELECT * FROM Plan WHERE planID = "
-               + request.getParameter("planID");
+         String sqlStr = "SELECT * FROM Plan_Date, Plan WHERE itemID = "
+               + request.getParameter("itemID") + " AND Plan_Date.planID = Plan.planID";
 
          // Print an HTML page as output of query
          ResultSet rset = stmt.executeQuery(sqlStr);
@@ -49,15 +49,30 @@ public class PlanDetailsServlet extends HttpServlet {  // JDK 6 and above only
          out.println("<h2>" + rset.getString("planTitle") + "</h2>");
             // Print a paragraph <p>...</p> for each row
          out.println("<p>Starting From: " + rset.getString("startCity") + "</p>");
-
+         out.println("<p>Date: " + rset.getDate("startDate")+" - "+rset.getDate("endDate")+"</p>");
+         out.println("<p>$"+rset.getInt("price")+"</p>");
+         out.println("<p>"+rset.getInt("remaining_seat")+" seats remaining. </p>");
+         out.println("<form method='post' action='checkout'>");
+         out.println("<input type='hidden' name='itemID' value=" + rset.getInt("itemID") + " />");
+         out.println("<input type='submit' value='join' />");
+         out.println("</form>");
+         out.println("<br />");
+         out.println("<br />");
+         out.println("<br />");
+         out.println("<p>===============================</p>");
          String sqlStr2 = "SELECT * FROM Plan_Date WHERE planID = "
-               + request.getParameter("planID");
-
+               + rset.getInt("planID");
+         out.println("<h3>All available dates for this plan: </h3>");
          ResultSet rset2 = stmt.executeQuery(sqlStr2);
          while(rset2.next()){
+
             out.println("<p>Duration: "+rset2.getDate("startDate")+" - "+rset2.getDate("endDate")+"</p>");
             out.println("<p>$"+rset2.getInt("price")+"</p>");
             out.println("<p>"+rset2.getInt("remaining_seat")+" seats remaining. </p>");
+            out.println("<form method='post' action='detail'>");
+            out.println("<input type='hidden' name='itemID' value=" + rset2.getInt("itemID") + " />");
+            out.println("<input type='submit' value='check' />");
+            out.println("</form>");
          }
 
          out.println("</body></html>");

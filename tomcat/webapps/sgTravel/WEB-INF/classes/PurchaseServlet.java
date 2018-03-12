@@ -1,10 +1,10 @@
-// Saved as "ebookshop\WEB-INF\classes\QueryServlet.java".
 import java.io.*;
 import java.sql.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
+import java.util.UUID;
 
-public class CheckOutServlet extends HttpServlet {  // JDK 6 and above only
+public class PurchaseServlet extends HttpServlet {  // JDK 6 and above only
 
    // The doGet() runs once per HTTP GET request to this servlet.
    @Override
@@ -26,7 +26,7 @@ public class CheckOutServlet extends HttpServlet {  // JDK 6 and above only
 
          // Step 2: Create a "Statement" object inside the "Connection"
          stmt = conn.createStatement();
-         out.println("<html><head><title>Checkout</title></head><body>");
+         out.println("<html><head><title>Purchase Status</title></head><body>");
          String userName;
 
          HttpSession session = request.getSession(false);
@@ -39,32 +39,30 @@ public class CheckOutServlet extends HttpServlet {  // JDK 6 and above only
                out.println("<h3>Hello! <a href='account'>" + userName + "</a></h3>");
                out.println("<p><a href='logout'>Logout</a></p>");
             }
-          }
-         // Step 3: Execute a SQL SELECT query
-         String sqlStr = "SELECT * FROM Plan_Date WHERE itemID = "
-               + request.getParameter("itemID");
+         }
 
-         // Print an HTML page as output of query
+
+
+         int itemID = Integer.parseInt(request.getParameter("itemID"));
+         int numOfTravellers = Integer.parseInt(request.getParameter("numTravellers"));
+
+         String sqlStr = "SELECT * FROM Plan_Date WHERE itemID = " + itemID + " AND remaining_seat >= " + numOfTravellers;
          ResultSet rset = stmt.executeQuery(sqlStr);
-         rset.next();
-         out.println("<p>item ID:"+rset.getInt("itemID"));
-         Date startDate = rset.getDate("startDate");
-         Date endDate = rset.getDate("endDate");
-         int price = rset.getInt("price");
-         String sqlStr2 = "SELECT * FROM Plan WHERE planID = " + rset.getInt("planID");
-         ResultSet rset2 = stmt.executeQuery(sqlStr2);
-         rset2.next();
+         if(rset.next()){
 
-         out.println("<h3>Confirm purchasing "+rset2.getString("planTitle")+"</h3>");
+            String uniqueID = UUID.randomUUID().toString();
 
-         out.println("<p>Departure: "+startDate+" from "+rset2.getString("startCity")+"</p>");
-         out.println("<p>Return: "+endDate+"</p>");
-         out.println("<h2>Price: "+price+"</h2>");
-         out.println("<form method='post' action='purchase'>");
-         out.println("<input type='hidden' name='itemID' value=" + request.getParameter("itemID") + " />");
-         out.println("<p>Number of travellers: <input type='number' name='numTravellers' min = '0' /></p>");
-         out.println("<input type='submit' value='purchase' />");
-         out.println("</form>");
+            sqlStr = "INSERT INTO Plan_Users VALUES ('"+uniqueID+"', "+itemID+", "+rset.getInt("planID")+", '"+userName+"', "+rset.getInt("price")+", "+numOfTravellers+")";
+            int count = stmt.executeUpdate(sqlStr);
+            sqlStr = "UPDATE Plan_Date SET remaining_seat = remaining_seat - "+numOfTravellers+" WHERE itemID = "+itemID;
+            count = stmt.executeUpdate(sqlStr);
+            out.println("<h2>Thanks for purchasing!</h2>");
+            out.println("<p><a href='index'>Back to main</a></p>");
+
+
+         }else{
+            out.println("<h2>Not Enough Vacancies!</h2>");
+         }
 
          out.println("</body></html>");
       } catch (SQLException ex) {

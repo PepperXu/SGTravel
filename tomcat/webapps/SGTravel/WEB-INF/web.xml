@@ -46,6 +46,15 @@
       <servlet-name>Index</servlet-name>
       <servlet-class>MainServlet</servlet-class>
   </servlet>
+
+  <servlet>
+      <servlet-name>Purchase</servlet-name>
+      <servlet-class>PurchaseServlet</servlet-class>
+  </servlet>
+  <servlet>
+      <servlet-name>Account</servlet-name>
+      <servlet-class>AccountManagementServlet</servlet-class>
+  </servlet>
   <!-- Note: All <servlet> elements must be placed
        in front of <servlet-mapping> elements -->
 
@@ -81,6 +90,14 @@
   <servlet-mapping>
     <servlet-name>Index</servlet-name>
     <url-pattern>/index</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Purchase</servlet-name>
+    <url-pattern>/purchase</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Account</servlet-name>
+    <url-pattern>/account</url-pattern>
   </servlet-mapping>
 
 </web-app>

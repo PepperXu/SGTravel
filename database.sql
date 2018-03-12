@@ -83,12 +83,16 @@ create table Users
 		primary key (username)
 	);
 
-drop table if exists Plan_User;
+drop table if exists Plan_Users;
 
 create table Plan_Users
 	(
+		purchaseID char(128),
 		itemID int,
-		username char(16)
+		planID int,
+		username char(16),
+		price int,
+		amount int
 	);
 
 drop table if exists Comment;
@@ -113,7 +117,7 @@ create table Cart
 #Plan
 #planID INT, planTitle varchar(50), duration INT,  remaining_seat INT, country varchar(50), plan_detail varchar(200)
 
-insert into Plan values(001, 'Singapore','4 Days China Tour 4 Days China Tour', 4, 'China');
+insert into Plan values(001, 'Singapore','4 Days China Tour (Beijing)', 4, 'China');
 insert into Plan values(002, 'Singapore','3 Days China Tour (Shanghai) ', 3, 'China');
 insert into Plan values(003, 'New York','2 Days China Tour (Chongqing)', 2, 'China');
 

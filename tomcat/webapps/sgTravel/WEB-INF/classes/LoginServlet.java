@@ -59,7 +59,7 @@ public class LoginServlet extends HttpServlet {
                   session.setAttribute("username", userName);
                }
 
-               out.println("<p>Hello, " + userName + "!</p>");
+               out.println("<p>Hello, <a href='account'>" + userName + "</a>!</p>");
                out.println("<p><a href='index'>Back to main</a></p>");
             }
          }
