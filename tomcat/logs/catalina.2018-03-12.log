@@ -36,3 +36,71 @@
 12-Mar-2018 15:11:13.064 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/sgTravel] has started
 12-Mar-2018 15:11:13.164 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
 12-Mar-2018 15:11:13.166 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/sgTravel] is completed
+12-Mar-2018 19:07:50.374 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload Reloading context [/SGTravel]
+12-Mar-2018 19:07:50.399 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/SGTravel] has started
+12-Mar-2018 19:07:51.375 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+12-Mar-2018 19:07:51.390 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/SGTravel] is completed
+12-Mar-2018 21:34:11.889 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+12-Mar-2018 21:34:11.894 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-9999"]
+12-Mar-2018 21:34:11.953 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+12-Mar-2018 21:34:12.008 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+12-Mar-2018 21:34:12.089 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-9999"]
+12-Mar-2018 21:34:12.098 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+12-Mar-2018 21:34:12.101 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-9999"]
+12-Mar-2018 21:34:12.105 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+12-Mar-2018 21:34:22.835 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.4
+12-Mar-2018 21:34:22.842 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jan 18 2018 19:42:17 UTC
+12-Mar-2018 21:34:22.843 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.4.0
+12-Mar-2018 21:34:22.843 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+12-Mar-2018 21:34:22.843 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.12.3
+12-Mar-2018 21:34:22.844 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+12-Mar-2018 21:34:22.844 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home
+12-Mar-2018 21:34:22.844 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           9.0.4+11
+12-Mar-2018 21:34:22.845 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+12-Mar-2018 21:34:22.845 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/Xinwei/Webapp/tomcat
+12-Mar-2018 21:34:22.845 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/Xinwei/Webapp/tomcat
+12-Mar-2018 21:34:22.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+12-Mar-2018 21:34:22.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+12-Mar-2018 21:34:22.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/Xinwei/Webapp/tomcat/conf/logging.properties
+12-Mar-2018 21:34:22.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+12-Mar-2018 21:34:22.848 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+12-Mar-2018 21:34:22.848 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+12-Mar-2018 21:34:22.848 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+12-Mar-2018 21:34:22.849 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/Xinwei/Webapp/tomcat
+12-Mar-2018 21:34:22.849 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/Xinwei/Webapp/tomcat
+12-Mar-2018 21:34:22.849 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/Xinwei/Webapp/tomcat/temp
+12-Mar-2018 21:34:22.850 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/Xinwei/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+12-Mar-2018 21:34:22.932 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-9999"]
+12-Mar-2018 21:34:22.977 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+12-Mar-2018 21:34:22.991 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+12-Mar-2018 21:34:22.994 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+12-Mar-2018 21:34:22.995 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1032 ms
+12-Mar-2018 21:34:23.138 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+12-Mar-2018 21:34:23.138 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.4
+12-Mar-2018 21:34:23.152 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/Xinwei/Webapp/tomcat/webapps/docs]
+12-Mar-2018 21:34:23.952 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+12-Mar-2018 21:34:24.119 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/Xinwei/Webapp/tomcat/webapps/docs] has finished in [966] ms
+12-Mar-2018 21:34:24.120 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/Xinwei/Webapp/tomcat/webapps/ebookshop]
+12-Mar-2018 21:34:24.324 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+12-Mar-2018 21:34:24.328 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/Xinwei/Webapp/tomcat/webapps/ebookshop] has finished in [208] ms
+12-Mar-2018 21:34:24.329 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/Xinwei/Webapp/tomcat/webapps/examples]
+12-Mar-2018 21:34:24.848 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+12-Mar-2018 21:34:24.941 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/Xinwei/Webapp/tomcat/webapps/examples] has finished in [612] ms
+12-Mar-2018 21:34:24.944 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/Xinwei/Webapp/tomcat/webapps/hello]
+12-Mar-2018 21:34:25.144 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+12-Mar-2018 21:34:25.171 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/Xinwei/Webapp/tomcat/webapps/hello] has finished in [227] ms
+12-Mar-2018 21:34:25.172 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/Xinwei/Webapp/tomcat/webapps/host-manager]
+12-Mar-2018 21:34:25.361 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+12-Mar-2018 21:34:25.369 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/Xinwei/Webapp/tomcat/webapps/host-manager] has finished in [197] ms
+12-Mar-2018 21:34:25.370 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/Xinwei/Webapp/tomcat/webapps/manager]
+12-Mar-2018 21:34:25.519 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+12-Mar-2018 21:34:25.522 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/Xinwei/Webapp/tomcat/webapps/manager] has finished in [151] ms
+12-Mar-2018 21:34:25.522 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/Xinwei/Webapp/tomcat/webapps/ROOT]
+12-Mar-2018 21:34:25.647 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+12-Mar-2018 21:34:25.650 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/Xinwei/Webapp/tomcat/webapps/ROOT] has finished in [127] ms
+12-Mar-2018 21:34:25.650 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/Xinwei/Webapp/tomcat/webapps/SGTravel]
+12-Mar-2018 21:34:25.798 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+12-Mar-2018 21:34:25.801 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/Xinwei/Webapp/tomcat/webapps/SGTravel] has finished in [150] ms
+12-Mar-2018 21:34:25.806 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-9999"]
+12-Mar-2018 21:34:25.818 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+12-Mar-2018 21:34:25.821 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 2826 ms
