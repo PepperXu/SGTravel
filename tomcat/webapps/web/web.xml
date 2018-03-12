@@ -1,0 +1,11 @@
+<servlet>  
+    <servlet-name>ShowPic</servlet-name>  
+    <display-name>ShowPic</display-name>  
+    <description></description>  
+    <servlet-class>  
+    cn.ccb.zlgz.web.servlet.ShowPic</servlet-class>  
+  </servlet>  
+  <servlet-mapping>  
+    <servlet-name>ShowPic</servlet-name>  
+    <url-pattern>/ShowPic</url-pattern>  
+  </servlet-mapping>  
