@@ -19,7 +19,7 @@ public class MainServlet extends HttpServlet {
          } else {
             synchronized (session) {
                userName = (String) session.getAttribute("username");
-               out.println("<ul><li><a href='index'>Hello! " + userName + "</a></li><li><a href='logout'>Logout</a></li></ul>");
+               out.println("<ul><li><a href='account'>Hello! " + userName + "</a></li><li><a href='logout'>Logout</a></li></ul>");
             }
           }
 
