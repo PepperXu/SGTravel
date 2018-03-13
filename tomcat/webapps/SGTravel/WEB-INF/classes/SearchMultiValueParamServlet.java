@@ -67,7 +67,7 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
 
          java.sql.Date startDate = new java.sql.Date(sDate.getTime());
          java.sql.Date endDate = new java.sql.Date(eDate.getTime());
-         String sqlStr = "SELECT Plan.planID, Plan.planTitle, Plan.country, Plan_Date.price, Plan.duration, Plan_Date.startDate, Plan_Date.endDate, Plan_Date.remaining_seat, Plan_Date.itemID FROM Plan, Plan_City, City, Plan_Date WHERE ";
+         String sqlStr = "SELECT Plan.planID, Plan.planTitle, Plan.country, Plan.img_path, Plan_Date.price, Plan.duration, Plan_Date.startDate, Plan_Date.endDate, Plan_Date.remaining_seat, Plan_Date.itemID FROM Plan, Plan_City, City, Plan_Date WHERE ";
 
          if(city != "0"){
                sqlStr += "City.city = "
@@ -102,7 +102,7 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
             out.println(" <div class='col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp' data-wow-delay='0.1s'> <div class='portfolio-wrap'> ");
             out.println("<form method='post' action='detail' name='myform'>");
             out.println("<input type='hidden' name='itemID' value=" + rset.getInt("itemID") + " />");
-            out.println("<a href='javascript: submitform()''><img src='images/2.jpg' class='img-fluid' alt=''></a>");
+            out.println("<a href='javascript: submitform()''><img src='"+rset.getString("img_path")+"' class='img-fluid' alt=''></a>");
             out.println("<p>Plan ID: "+ rset.getInt("planID"));
             out.println("<br/>Plane Title: " + rset.getString("planTitle"));
             out.println("<br/>Duration: " +rset.getDate("startDate")+" - "+rset.getDate("endDate"));
