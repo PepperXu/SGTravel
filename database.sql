@@ -10,7 +10,8 @@ create table Plan
 	startCity varchar(50),
 	planTitle varchar(200),
 	duration int,
-	country varchar(50)
+	country varchar(50),
+	img_path char(200)
    );
 
 drop table if exists Plan_StartDate;
@@ -117,30 +118,30 @@ create table Cart
 #Plan
 #planID INT, planTitle varchar(50), duration INT,  remaining_seat INT, country varchar(50), plan_detail varchar(200)
 
-insert into Plan values(001, 'Singapore','4 Days China Tour (Beijing)', 4, 'China');
-insert into Plan values(002, 'Singapore','3 Days China Tour (Shanghai) ', 3, 'China');
-insert into Plan values(003, 'New York','2 Days China Tour (Chongqing)', 2, 'China');
+insert into Plan values(001, 'Singapore','4 Days China Tour (Beijing)', 4, 'China', 'images/travel/beijing.jpg');
+insert into Plan values(002, 'Singapore','3 Days China Tour (Shanghai) ', 3, 'China', 'images/travel/shanghai.jpg');
+insert into Plan values(003, 'New York','2 Days China Tour (Chongqing)', 2, 'China', 'images/travel/chongqing.jpg');
 
-insert into Plan values(004, 'New York','3 Days Singapore Tour', 3, 'Singapore');
+insert into Plan values(004, 'New York','3 Days Singapore Tour', 3, 'Singapore', 'images/travel/singapore.jpg');
 
-insert into Plan values(005, 'London','5 Days Thailand Tour (Bangkok + Chiang Mai + Pattaya)', 5, 'Thailand') ;
+insert into Plan values(005, 'London','5 Days Thailand Tour (Bangkok + Chiang Mai + Pattaya)', 5, 'Thailand', 'images/travel/thai.jpg') ;
 
-insert into Plan values(006, 'London','4 Days Italy Tour (Rome + Milan + Florence)', 4, 'Italy' ) ;
-insert into Plan values(007, 'Paris','9 Days Italy Tour (Rome + Milan + Florence + Venice + Palermo)', 9, 'Italy' ) ;
+insert into Plan values(006, 'London','4 Days Italy Tour (Rome + Milan + Florence)', 4, 'Italy', 'images/travel/italy.jpg') ;
+insert into Plan values(007, 'Paris','9 Days Italy Tour (Rome + Milan + Florence + Venice + Palermo)', 9, 'Italy' , 'images/travel/italy_2.jpg') ;
 
-insert into Plan values(008, 'Singapore','9 Days France Tour (Bordeaux + Paris + Lille + Nice + Lyon)', 9, 'France' ) ;
-insert into Plan values(009, 'Sydney','2 Days France Tour (Paris)', 2, 'France' ) ;
-insert into Plan values(010, 'Sydney','1 Days France Tour (Bordeaux )', 1, 'France') ;
+insert into Plan values(008, 'Singapore','9 Days France Tour (Bordeaux + Paris + Lille + Nice + Lyon)', 9, 'France' , 'images/travel/france.jpg') ;
+insert into Plan values(009, 'Sydney','2 Days France Tour (Paris)', 2, 'France' , 'images/travel/paris.jpg') ;
+insert into Plan values(010, 'Sydney','1 Days France Tour (Bordeaux )', 1, 'France', 'images/travel/bordeaux.jpg') ;
 
-insert into Plan values(011, 'Tokyo','1 Days Egypt Tour (Cairo)', 1, 'Egypt') ;
-insert into Plan values(012, 'Tokyo','1 Days Egypt Tour (Alexandria)', 1, 'Egypt') ;
+insert into Plan values(011, 'Tokyo','1 Days Egypt Tour (Cairo)', 1, 'Egypt', 'images/travel/cairo.jpg') ;
+insert into Plan values(012, 'Tokyo','1 Days Egypt Tour (Alexandria)', 1, 'Egypt', 'images/travel/alexandria.jpg') ;
 
-insert into Plan values(013, 'Beijing','4 Days France Tour (Rio de Janeiro + Sao Paulo)', 4, 'Brazil') ;
+insert into Plan values(013, 'Beijing','4 Days France Tour (Rio de Janeiro + Sao Paulo)', 4, 'Brazil', 'images/travel/sao_paulo.jpg') ;
 
-insert into Plan values(014, 'Beijing','15 Days United States Tour (New York + Chicago + Philadelphia + Boston + Washington)', 15, 'United States') ;
-insert into Plan values(015, 'Shanghai','15 Days United States Tour (Los Angeles + San Francisco + Las Vegas + Yellowstone Park)', 15, 'United States') ;
-insert into Plan values(016, 'Shanghai','2 Days Australia Tour (Sydney)', 2, 'Australia') ;
-insert into Plan values(017, 'Paris','2 Days Australia Tour (Melbourne)', 2, 'Australia') ;
+insert into Plan values(014, 'Beijing','15 Days United States Tour (New York + Chicago + Philadelphia + Boston + Washington)', 15, 'United States', 'images/travel/new_york.jpg') ;
+insert into Plan values(015, 'Shanghai','15 Days United States Tour (Los Angeles + San Francisco + Las Vegas + Yellowstone Park)', 15, 'United States', 'images/travel/los_angeles.jpg') ;
+insert into Plan values(016, 'Shanghai','2 Days Australia Tour (Sydney)', 2, 'Australia', 'images/travel/sydney.jpg') ;
+insert into Plan values(017, 'Paris','2 Days Australia Tour (Melbourne)', 2, 'Australia', 'images/travel/melbourne.jpg') ;
 
 
 
