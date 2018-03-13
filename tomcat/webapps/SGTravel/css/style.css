@@ -453,7 +453,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 #available  .availabledate {
-	background-color: #179a9b;
+	background-color: #e3dddd;
 	border-radius: 3px;
     padding: 10px 30px;
 
@@ -847,11 +847,22 @@ about us
   padding: 0 20px 20px 20px;
 }
 
-
+/*--=========
+panneldetail
+==========---*/
 #plandetail .inforpannel{
-	background-color: #ffb902;
+	background-color: #e3dddd;
 	border-radius: 3px;
     padding: 10px 30px;
+
+}
+#plandetail h4{
+  text-align: center;
+}
+
+#plandetail .bg{
+  background-color: #e3dddd;
+  padding: 30px 40px 30px 40px;
 
 }
 
@@ -859,12 +870,52 @@ about us
 
 
 
+
+
+
+#plandetail .comment{
+  background-color: #ffb902;
+    top: 50%; left: 50%;
+    width: x; height: y;
+    margin: -y/2 0 0 -x/2;
+}
+
+#plandetail  .commentleft {
+  width: 20%;
+  float: left;
+
+  padding: 10px 10px 10px 10px;
+}
+
+#plandetail  .commentright {
+  margin-left: 20%;
+  
+  padding: 10px 10px 10px 10px;
+}
+
+#plandetail .commentleft p{
+   padding: 0px 10px 10px 10px;
+   text-align: center;
+}
+/*----=====
+ flight
+ =======------*/
+
+#flightdetail .bg{
+  padding: 20px 0px 20px 0px;
+   background-color:#e3dddd;
+ }
+
 #flightdetail .planeleft{
 
   width: 50%;
   float: left;
+<<<<<<< HEAD
 
 
+=======
+  background-color:#e3dddd;
+>>>>>>> c66cc7ba4b9ad441f4f7ec232b8450e16b36b360
 
  }
 
@@ -878,8 +929,14 @@ about us
 
  }
  #flightdetail .planeright{
+<<<<<<< HEAD
 
   margin-left: 50%;
+=======
+  
+ background-color:#e3dddd;
+  
+>>>>>>> c66cc7ba4b9ad441f4f7ec232b8450e16b36b360
 
  }
 
@@ -1298,7 +1355,24 @@ ul li .check{
 }
 
 
-input.name,input.date,input.num{
+.agile_form input[type=text]{
+    padding: 0.8em 1em;
+    color: #000;
+    width: 90.1%;
+    font-size: 0.85em;
+    outline: none;
+  border: none;
+    border-radius: 3px;
+    background: #fff;
+    letter-spacing: 1px;
+  -webkit-appearance: none;
+}
+
+
+
+
+
+input.name,input.date,input.num, input .comment{
     margin: 1em 0 0;
 }
 
@@ -1592,292 +1666,4 @@ h1 {
 }
 }
 /*--- //Responsive Code ---*/
-
-
-
-
-
-
-/*--product----*/
-/*-- products --*/
-.products {
-    padding: 5em 0;
-}
-.sorting{
-  float:right;
-  width: 35%;
-}
-.sorting-left{
-  float: right;
-    margin-right: 2em;
-    width: 25%;
-}
-select#country,select#country1 {
-    border: 1px solid #212121;
-    outline: none;
-    font-size: 14px;
-    color: #212121;
-    padding: 0.5em;
-    width: 100%;
-  cursor: pointer;
-}
-.products-right-grids{
-  margin-bottom: 2em;
-}
-.numbering{
-  text-align:right;
-}
-ul.paging {
-    margin: 4em auto 0;
-}
-.paging > .active > a,.paging > .active > a:hover {
-    background-color:#ffc229;
-    border-color:#EDB62B;
-}
-.pagination > li > a{
-  color:#212121;
-}
-.categories,.new-products{
-  border:1px solid #999;
-}
-.categories h2{
-  font-size: 1.5em;
-    color: #212121;
-    margin: 0;
-    padding: .5em;
-    background: #f5f5f5;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 5px;
-}
-.filter-price h3{
-  background:none;
-}
-.categories ul.cate,.new-products-grids{
-  padding:2em;
-}
-.categories ul li{
-  display:block;
-  color:#999;
-  font-size:14px;
-  margin-bottom:1em;
-}
-.categories ul li a{
-  color:#999;
-  text-decoration:none;
-}
-.categories ul li a:hover{
-  color:#3399cc;
-}
-.categories ul li span{
-  float:right;
-}
-ul.cate ul{
-  margin-left:2em;
-}
-ul.dropdown-menu1 li{
-  display:block;
-  font-size:14px;
-}
-ul.dropdown-menu1 li a{
-  color:#212121;
-  text-decoration:none;
-}
-input#amount {
-    outline: none;
-    margin: 0 auto;
-    text-align: center;
-    width: 100%;
-}
-.new-products-grid-left{
-  float:left;
-  width:35%;
-}
-.new-products-grid-right{
-  float:right;
-  width:60%;
-}
-/*-- //products --*/
-
-
-.products-left {
-    padding: 0;
-    margin-bottom: 24px;
-}
-.products-right {
-    padding: 0;
-}
-
-.products-right-grids{
-  margin-bottom: 2em;
-}
-
-.sorting {
-    width: 44%;
-}
-.sorting-left {
-    width: 42%;
-}
-
-
-.categories,.new-products{
-  border:1px solid #999;
-}
-.categories h2{
-  font-size: 1.5em;
-    color: #212121;
-    margin: 0;
-    padding: .5em;
-    background: #f5f5f5;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 5px;
-}
-.filter-price h3{
-  background:none;
-}
-.categories ul.cate,.new-products-grids{
-  padding:2em;
-}
-.categories ul li{
-  display:block;
-  color:#999;
-  font-size:14px;
-  margin-bottom:1em;
-}
-.categories ul li a{
-  color:#999;
-  text-decoration:none;
-}
-.categories ul li a:hover{
-  color:#3399cc;
-}
-.categories ul li span{
-  float:right;
-}
-
-
-.agile_top_brands_grids {
-    margin-top: 2em;
-}
-
-.hover14.column {
-    border: 1px solid #c0bebe;
-}
-
-.agile_top_brand_left_grid1 img {
-   max-width: 100% ! important ;
-}
-
-/*-- top-brands --*/
-.tag {
-    position: absolute;
-    top: -1%;
-    right: 10%;
-}
-.top-brands h2,.newproducts-w3agile h3,.login h2,.register h2,.faq-w3agile h3,.brands h3{
-  text-align:center;
-  color:#212121;
-  padding-bottom:.5em;
-  position:relative;
-  font-size: 2.5em;
-  text-transform: uppercase;
-}
-.top-brands h2:after,.newproducts-w3agile h3:after,.login h2:after,.register h2:after,.faq-w3agile h3:after,.brands h3:after{
-  content: '';
-    background: #3399cc;
-    height: 2px;
-    width: 15%;
-    position: absolute;
-    bottom: 0%;
-    left: 43%;
-}
-
-.top_brand_left {
-    float: left;
-    width: 33.33%;
-}
-
-
-.agile_top_brand_left_grid {
-    position: relative;
-    display: block;
-}
-
-
-.agile_top_brand_left_grid{
-  background: #FFFFFF;
-    padding: .5em;
-  position:relative;
-}
-.agile_top_brand_left_grid_pos{
-  position:absolute;
-  top:0%;
-  right:0%;
-}
-.agile_top_brand_left_grid1{
-  padding:1em;
-}
-.agile_top_brand_left_grid1 img{
-  margin:0 auto;
-}
-.top-brands{
-    background: #f5f5f5;
-  padding:5em 0;
-}
-.agile_top_brand_left_grid1 p{
-  color:#212121;
-  margin:1.5em 0 1em;
-  line-height:1.5em;
-  text-transform:capitalize;
-  font-size:14px;
-  text-align: center;
-}
-.agile_top_brand_left_grid1 h4,.agileinfo_single_right_snipcart h4{
-  font-weight:600;
-  font-size:1em;
-  color:#212121;
-  text-align: center;
-}
-.agile_top_brand_left_grid1 h4 span,.agileinfo_single_right_snipcart h4 span{
-  font-weight:300;
-  text-decoration:line-through;
-  padding-left:1em;
-}
-
-
-.agile_top_brand_left_grid:hover .snipcart-details input.button,.snipcart-details input.button:hover{
-    background: #fe9126;
-}
-
-
-
-.column div.agile_top_brand_left_grid {
-  position: relative;
-  margin:0;
-}
-.agile_top_brand_left_grid figure {
-  margin: 0;
-  padding: 0;
-  background:transparent;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.agile_top_brand_left_grid1 img {
-   max-width: 100% ! important ;
-}
-
-.agile_top_brand_left_grid1 p {
-    font-size: 13px;
-}
-.agile_top_brand_left_grid1 h4, .agileinfo_single_right_snipcart h4 {
-    font-size: 0.9em;
-}
-
-ul.cate ul{
-  margin-left:2em;
-}
-
-
 
