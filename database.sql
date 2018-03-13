@@ -25,7 +25,9 @@ create table Plan_Date
 		startDate date,
 		endDate date,
 		remaining_seat int,
-		price int
+		price int,
+		flightID_1 int,
+		flightID_2 int
 	);
 
 #drop table if exists Country;
@@ -57,8 +59,9 @@ drop table if exists Flight;
 
 create table Flight
 	(
-		filghtNumber int,
-		airplane varchar(50),
+		flightID int,
+		filghtNumber char(20),
+		airline varchar(50),
 		departureCity varchar(50),
 		departureTime DATETIME,
 		arrivalCity varchar(50),
@@ -66,12 +69,6 @@ create table Flight
 	);
 
 drop table if exists Plan_Flight;
-
-create table Plan_Flight
-	(
-		planID int,
-		flightNumber int
-	);
 
 drop table if exists User;
 
@@ -292,25 +289,43 @@ insert into Plan_City values (017, 32);
 
 #Plan_StartDate
 #planID int, start_date date
-insert into Plan_Date values (001001, 001, '2018-03-01', '2018-03-04', 0, 800);
-insert into Plan_Date values (001002, 001, '2018-04-01', '2018-04-04', 5, 800);
-insert into Plan_Date values (001003, 001, '2018-05-01', '2018-05-04', 10, 780);
-insert into Plan_Date values (001004, 001, '2018-06-01', '2018-06-04', 45, 700);
-insert into Plan_Date values (001005, 001, '2018-07-01', '2018-07-04', 50, 800);
-insert into Plan_Date values (001006, 001, '2018-08-01', '2018-08-04', 50, 800);
-insert into Plan_Date values (001007, 001, '2018-09-01', '2018-09-04', 50, 700);
-insert into Plan_Date values (001008, 001, '2018-10-01', '2018-10-04', 50, 700);
-insert into Plan_Date values (001009, 001, '2018-11-01', '2018-11-04', 50, 700);
-insert into Plan_Date values (001010, 001, '2018-12-01', '2018-12-04', 50, 700);
-insert into Plan_Date values (014001, 014, '2018-08-01', '2018-08-04', 15, 2000);
-insert into Plan_Date values (014002, 014, '2018-09-01', '2018-09-04', 20, 2000);
-insert into Plan_Date values (014003, 014, '2018-10-01', '2018-10-04', 20, 1800);
-insert into Plan_Date values (014004, 014, '2018-11-01', '2018-11-04', 20, 1800);
-insert into Plan_Date values (014005, 014, '2018-12-01', '2018-12-04', 20, 1800);
+insert into Plan_Date values (001001, 001, '2018-03-01', '2018-03-04', 0, 800, 019, 020);
+insert into Plan_Date values (001002, 001, '2018-04-01', '2018-04-04', 5, 800, 001, 002);
+insert into Plan_Date values (001003, 001, '2018-05-01', '2018-05-04', 10, 780, 003, 004);
+insert into Plan_Date values (001004, 001, '2018-06-01', '2018-06-04', 45, 700, 005, 006);
+insert into Plan_Date values (001005, 001, '2018-07-01', '2018-07-04', 50, 800, 007, 008);
+insert into Plan_Date values (001006, 001, '2018-08-01', '2018-08-04', 50, 800, 009, 010);
+insert into Plan_Date values (001007, 001, '2018-09-01', '2018-09-04', 50, 700, 011, 012);
+insert into Plan_Date values (001008, 001, '2018-10-01', '2018-10-04', 50, 700, 013, 014);
+insert into Plan_Date values (001009, 001, '2018-11-01', '2018-11-04', 50, 700, 015, 016);
+insert into Plan_Date values (001010, 001, '2018-12-01', '2018-12-04', 50, 700, 017, 018);
+insert into Plan_Date values (014001, 014, '2018-08-01', '2018-08-04', 15, 2000, 021, 022);
+insert into Plan_Date values (014002, 014, '2018-09-01', '2018-09-04', 20, 2000, 023, 024);
+insert into Plan_Date values (014003, 014, '2018-10-01', '2018-10-04', 20, 1800, 025, 026);
+insert into Plan_Date values (014004, 014, '2018-11-01', '2018-11-04', 20, 1800, 027, 028);
+insert into Plan_Date values (014005, 014, '2018-12-01', '2018-12-04', 20, 1800, 029, 030);
 
 
-
-
+insert into Flight values(001, 'SQ800', 'Singapore Airlines', 'Singapore', '2018-04-01 01:10:00', 'Beijing', '2018-04-01 07:15:00');
+insert into Flight values(002, 'SQ5879', 'Singapore Airlines', 'Beijing', '2018-04-04 15:35:00', 'Singapore', '2018-04-04 21:55:00');
+insert into Flight values(003, 'SQ800', 'Singapore Airlines', 'Singapore', '2018-05-01 01:10:00', 'Beijing', '2018-05-01 07:15:00');
+insert into Flight values(004, 'SQ5879', 'Singapore Airlines', 'Beijing', '2018-05-04 15:35:00', 'Singapore', '2018-05-04 21:55:00');
+insert into Flight values(005, 'SQ800', 'Singapore Airlines', 'Singapore', '2018-06-01 01:10:00', 'Beijing', '2018-06-01 07:15:00');
+insert into Flight values(006, 'SQ5879', 'Singapore Airlines', 'Beijing', '2018-06-04 15:35:00', 'Singapore', '2018-06-04 21:55:00');
+insert into Flight values(007, 'SQ800', 'Singapore Airlines', 'Singapore', '2018-07-01 01:10:00', 'Beijing', '2018-07-01 07:15:00');
+insert into Flight values(008, 'SQ5879', 'Singapore Airlines', 'Beijing', '2018-07-04 15:35:00', 'Singapore', '2018-07-04 21:55:00');
+insert into Flight values(009, 'SQ800', 'Singapore Airlines', 'Singapore', '2018-08-01 01:10:00', 'Beijing', '2018-08-01 07:15:00');
+insert into Flight values(010, 'SQ5879', 'Singapore Airlines', 'Beijing', '2018-08-04 15:35:00', 'Singapore', '2018-08-04 21:55:00');
+insert into Flight values(011, 'SQ800', 'Singapore Airlines', 'Singapore', '2018-09-01 01:10:00', 'Beijing', '2018-09-01 07:15:00');
+insert into Flight values(012, 'SQ5879', 'Singapore Airlines', 'Beijing', '2018-09-04 15:35:00', 'Singapore', '2018-09-04 21:55:00');
+insert into Flight values(013, 'SQ800', 'Singapore Airlines', 'Singapore', '2018-10-01 01:10:00', 'Beijing', '2018-10-01 07:15:00');
+insert into Flight values(014, 'SQ5879', 'Singapore Airlines', 'Beijing', '2018-10-04 15:35:00', 'Singapore', '2018-10-04 21:55:00');
+insert into Flight values(015, 'SQ800', 'Singapore Airlines', 'Singapore', '2018-11-01 01:10:00', 'Beijing', '2018-11-01 07:15:00');
+insert into Flight values(016, 'SQ5879', 'Singapore Airlines', 'Beijing', '2018-11-04 15:35:00', 'Singapore', '2018-11-04 21:55:00');
+insert into Flight values(017, 'SQ800', 'Singapore Airlines', 'Singapore', '2018-12-01 01:10:00', 'Beijing', '2018-12-01 07:15:00');
+insert into Flight values(018, 'SQ5879', 'Singapore Airlines', 'Beijing', '2018-12-04 15:35:00', 'Singapore', '2018-12-04 21:55:00');
+insert into Flight values(019, 'SQ800', 'Singapore Airlines', 'Singapore', '2018-03-01 01:10:00', 'Beijing', '2018-03-01 07:15:00');
+insert into Flight values(020, 'SQ5879', 'Singapore Airlines', 'Beijing', '2018-03-04 15:35:00', 'Singapore', '2018-03-04 21:55:00');
 
 
 

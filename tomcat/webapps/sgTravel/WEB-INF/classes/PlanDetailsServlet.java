@@ -53,7 +53,7 @@ public class PlanDetailsServlet extends HttpServlet {  // JDK 6 and above only
          out.println("<br/>Date: " + rset.getDate("startDate")+" - "+rset.getDate("endDate"));
          out.println("<br/>price: $"+rset.getInt("price"));
          out.println("<br/>Remaining Seats: "+rset.getInt("remaining_seat")+"</p>");
-         out.println("</div><img src='images/travel/01.jpg' alt='' class='img-fluid'></img></div></section>");
+         out.println("</div><img src='"+rset.getString("img_path")+"' alt='' class='img-fluid'></img></div></section>");
          out.println("<form method='post' action='checkout'>");
          out.println("<input type='hidden' name='itemID' value=" + rset.getInt("itemID") + " />");
          out.println("<div class = 'button' align='center'><input type='submit' value='Join'></div>");
