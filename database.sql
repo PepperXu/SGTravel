@@ -290,8 +290,9 @@ insert into Plan_City values (017, 32);
 #airplane varchar(50), city varchar(50) ,filghtID int
 
 
-#Plan_StartDate
-#planID int, start_date date
+#create table Plan_Date
+#(itemID int, planID int, startDate date, endDate date, remaining_seat int, price int);
+
 insert into Plan_Date values (001001, 001, '2018-03-01', '2018-03-04', 0, 800);
 insert into Plan_Date values (001002, 001, '2018-04-01', '2018-04-04', 5, 800);
 insert into Plan_Date values (001003, 001, '2018-05-01', '2018-05-04', 10, 780);
@@ -302,11 +303,90 @@ insert into Plan_Date values (001007, 001, '2018-09-01', '2018-09-04', 50, 700);
 insert into Plan_Date values (001008, 001, '2018-10-01', '2018-10-04', 50, 700);
 insert into Plan_Date values (001009, 001, '2018-11-01', '2018-11-04', 50, 700);
 insert into Plan_Date values (001010, 001, '2018-12-01', '2018-12-04', 50, 700);
-insert into Plan_Date values (014001, 014, '2018-08-01', '2018-08-04', 15, 2000);
-insert into Plan_Date values (014002, 014, '2018-09-01', '2018-09-04', 20, 2000);
-insert into Plan_Date values (014003, 014, '2018-10-01', '2018-10-04', 20, 1800);
-insert into Plan_Date values (014004, 014, '2018-11-01', '2018-11-04', 20, 1800);
-insert into Plan_Date values (014005, 014, '2018-12-01', '2018-12-04', 20, 1800);
+
+insert into Plan_Date values (002001, 002, '2018-04-01', '2018-04-03', 20, 700);
+insert into Plan_Date values (002002, 002, '2018-05-15', '2018-05-18', 30, 600);
+insert into Plan_Date values (002003, 002, '2018-06-21', '2018-06-23', 20, 600);
+insert into Plan_Date values (002004, 002, '2018-07-21', '2018-07-23', 40, 700);
+insert into Plan_Date values (002005, 002, '2018-08-21', '2018-08-23', 20, 600);
+insert into Plan_Date values (002006, 002, '2018-09-21', '2018-09-23', 10, 600);
+
+insert into Plan_Date values (003001, 003, '2018-08-01', '2018-08-02', 15, 400);
+insert into Plan_Date values (003002, 003, '2018-09-01', '2018-09-02', 20, 400);
+insert into Plan_Date values (003003, 003, '2018-10-01', '2018-10-02', 30, 400);
+insert into Plan_Date values (003004, 003, '2018-11-01', '2018-11-02', 40, 400);
+insert into Plan_Date values (003005, 003, '2018-12-01', '2018-12-02', 20, 500);
+
+insert into Plan_Date values (004003, 004, '2018-05-01', '2018-05-03', 10, 780);
+insert into Plan_Date values (004004, 004, '2018-06-01', '2018-06-03', 45, 700);
+insert into Plan_Date values (004005, 004, '2018-07-01', '2018-07-03', 50, 800);
+insert into Plan_Date values (004006, 004, '2018-08-01', '2018-08-03', 5, 800);
+insert into Plan_Date values (004007, 004, '2018-09-01', '2018-09-03', 0, 700);
+insert into Plan_Date values (004008, 004, '2018-10-01', '2018-10-03', 50, 700);
+
+insert into Plan_Date values (005001, 005, '2018-05-01', '2018-05-05', 10, 1200);
+insert into Plan_Date values (005002, 005, '2018-06-01', '2018-06-05', 45, 1200);
+insert into Plan_Date values (005003, 005, '2018-07-01', '2018-07-05', 30, 1100);
+insert into Plan_Date values (005004, 005, '2018-08-01', '2018-08-05', 5, 1200);
+insert into Plan_Date values (005005, 005, '2018-09-01', '2018-09-05', 10, 1200);
+insert into Plan_Date values (005006, 005, '2018-10-01', '2018-10-05', 50, 1100);
+
+insert into Plan_Date values (006001, 006, '2018-03-01', '2018-03-04', 6, 800);
+insert into Plan_Date values (006002, 006, '2018-06-01', '2018-06-04', 20, 900);
+insert into Plan_Date values (006003, 006, '2018-07-01', '2018-07-04', 30, 1000;
+insert into Plan_Date values (006004, 006, '2018-08-01', '2018-08-04', 5, 1000);
+insert into Plan_Date values (006005, 006, '2018-09-01', '2018-09-04', 10, 800);
+insert into Plan_Date values (006006, 006, '2018-10-01', '2018-10-04', 40, 800);
+
+insert into Plan_Date values (007001, 007, '2018-04-01', '2018-04-09', 7, 1200);
+insert into Plan_Date values (007002, 007, '2018-06-01', '2018-06-09', 20, 1200);
+insert into Plan_Date values (007003, 007, '2018-07-01', '2018-07-09', 10, 1400);
+insert into Plan_Date values (007004, 007, '2018-08-01', '2018-08-09', 9, 1100);
+insert into Plan_Date values (007005, 007, '2018-09-01', '2018-09-09', 10, 1200);
+insert into Plan_Date values (007006, 007, '2018-10-01', '2018-10-09', 40, 1100);
+
+insert into Plan_Date values (008001, 008, '2018-06-01', '2018-06-09', 20, 1200);
+insert into Plan_Date values (008002, 008, '2018-07-01', '2018-07-09', 10, 1400);
+insert into Plan_Date values (008003, 008, '2018-08-01', '2018-08-09', 9, 1100);
+insert into Plan_Date values (008004, 008, '2018-09-01', '2018-09-09', 10, 1200);
+insert into Plan_Date values (008005, 008, '2018-10-01', '2018-10-09', 40, 1100);
+
+insert into Plan_Date values (009001, 009, '2018-07-01', '2018-07-02', 60, 300);
+insert into Plan_Date values (009002, 009, '2018-08-01', '2018-08-02', 60, 300);
+
+insert into Plan_Date values (010001, 010, '2018-07-01', '2018-07-01', 60, 300);
+insert into Plan_Date values (010002, 010, '2018-08-01', '2018-08-01', 60, 300);
+
+insert into Plan_Date values (011001, 011, '2018-06-01', '2018-06-01', 10, 400);
+insert into Plan_Date values (011002, 011, '2018-07-01', '2018-07-01', 0, 400);
+insert into Plan_Date values (011003, 011, '2018-08-01', '2018-08-01', 10, 400);
+
+insert into Plan_Date values (012001, 012, '2018-11-01', '2018-11-01', 10, 450);
+insert into Plan_Date values (012002, 012, '2018-12-01', '2018-12-01', 0, 450);
+
+insert into Plan_Date values (013001, 013, '2018-09-01', '2018-09-04', 10, 900);
+insert into Plan_Date values (013002, 013, '2018-10-01', '2018-10-04', 40, 900);
+insert into Plan_Date values (013003, 013, '2018-11-01', '2018-11-04', 30, 1000);
+insert into Plan_Date values (013004, 013, '2018-12-01', '2018-12-04', 7, 1000);
+
+insert into Plan_Date values (014001, 014, '2018-08-01', '2018-08-15', 15, 2000);
+insert into Plan_Date values (014002, 014, '2018-09-01', '2018-09-15', 20, 2000);
+insert into Plan_Date values (014003, 014, '2018-10-01', '2018-10-15', 20, 1800);
+insert into Plan_Date values (014004, 014, '2018-11-01', '2018-11-15', 20, 1800);
+insert into Plan_Date values (014005, 014, '2018-12-01', '2018-12-15', 20, 1800);
+
+insert into Plan_Date values (015001, 015, '2018-08-01', '2018-08-15', 0, 2000);
+insert into Plan_Date values (015002, 015, '2018-09-01', '2018-09-15', 5, 2000);
+insert into Plan_Date values (015003, 015, '2018-10-01', '2018-10-15', 10, 1800);
+
+insert into Plan_Date values (016001, 016, '2018-08-01', '2018-08-02', 15, 700);
+insert into Plan_Date values (016002, 016, '2018-09-01', '2018-09-02', 5, 700);
+insert into Plan_Date values (016003, 016, '2018-10-01', '2018-10-02', 10, 700);
+
+insert into Plan_Date values (017001, 017, '2018-06-01', '2018-06-02', 0, 600);
+insert into Plan_Date values (017002, 017, '2018-07-01', '2018-07-02', 15, 500);
+insert into Plan_Date values (017003, 017, '2018-08-01', '2018-08-02', 10, 500);
+
 
 
 
