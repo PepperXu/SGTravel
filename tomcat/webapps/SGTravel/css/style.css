@@ -855,6 +855,44 @@ about us
 
 }
 
+
+
+
+
+#flightdetail .planeleft{
+ 
+  width: 50%;
+  float: left;
+ 
+
+
+ }
+
+ #flightdetail .planeleft h4{
+  padding: 0px 20px 20px 20px;
+
+ }
+ #flightdetail .planeleft p{
+  padding: 0 20px 0px 20px;
+  text-align: center;
+
+ }
+ #flightdetail .planeright{
+ 
+  margin-left: 50%;
+
+ }
+
+ #flightdetail .planeright h4{
+  padding: 0px 20px 20px 20px;
+
+ }
+ #flightdetail .planeright p{
+  padding: 0 20px 0px 20px;
+  text-align: center;
+
+ }
+
 /*--===========
 Main page:search  
 ============---*/
@@ -1843,14 +1881,3 @@ ul.cate ul{
 
 
 
-#left{
-  width: 350px;
-  
-  float: left;
-  background-color: lightblue;
- }
- #right{
-  
-  margin-left: 350px;
-  background-color: pink;
- }
