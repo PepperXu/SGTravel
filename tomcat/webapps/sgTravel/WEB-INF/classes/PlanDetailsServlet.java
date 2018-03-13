@@ -39,36 +39,69 @@ public class PlanDetailsServlet extends HttpServlet {  // JDK 6 and above only
             }
           }
           out.println("</div></div></section><!--========================== Plan Details ============================--><section id = 'plandetail'> <div class = 'container'> <header class='section-header'> <br/><br/> <h3 class='section-title'>Plan Details</h3> </header> <div class='inforpannel'>");
-
+          int itemID = Integer.parseInt(request.getParameter("itemID"));
          // Step 3: Execute a SQL SELECT query
+
+
          String sqlStr = "SELECT * FROM Plan_Date, Plan WHERE itemID = "
-               + request.getParameter("itemID") + " AND Plan_Date.planID = Plan.planID";
+               + itemID + " AND Plan_Date.planID = Plan.planID";
+
+
 
          // Print an HTML page as output of query
          ResultSet rset = stmt.executeQuery(sqlStr);
          rset.next();
+         int planID = rset.getInt("planID");
          out.println("<h4 align='center'> PLAN TITLE: " + rset.getString("planTitle") + "</h4>");
             // Print a paragraph <p>...</p> for each row
          out.println("<p align='center'>starting from: " + rset.getString("startCity"));
+         out.println("<br/>Plan ID: "+planID);
          out.println("<br/>Date: " + rset.getDate("startDate")+" - "+rset.getDate("endDate"));
          out.println("<br/>price: $"+rset.getInt("price"));
          out.println("<br/>Remaining Seats: "+rset.getInt("remaining_seat")+"</p>");
          out.println("</div><img src='"+rset.getString("img_path")+"' alt='' class='img-fluid'></img></div></section>");
-         out.println("<form method='post' action='checkout'>");
-         out.println("<input type='hidden' name='itemID' value=" + rset.getInt("itemID") + " />");
+
+
+         out.println("<section id = 'flightdetail'> <div class = 'container'> <header class='section-header'> <br/><br/> <h3 class='section-title'>Flight Details</h3> </header> <br/>");
+
+         String sqlStr0 = "SELECT * FROM Flight, Plan_Date WHERE Plan_Date.itemID = " + itemID + " AND Flight.flightID = Plan_Date.flightID_1";
+         rset = stmt.executeQuery(sqlStr0);
+         rset.next();
+         out.println("<div class='planeleft'><h4 align='center'>Outbound Flight</h4>"
+            + "<p>From "+rset.getString("departureCity")+" To "+rset.getString("arrivalCity")+" </p>"
+            + "<p> Time: "+rset.getString("departureTime")+"-"+rset.getString("arrivalTime")+"  </p>"
+            + "<p> Flight Number: "+rset.getString("flightNumber")+"</p>"
+            + "<p> Airline: "+rset.getString("airline")+"</p>"
+            + "</div>");
+
+         String sqlStr1 = "SELECT * FROM Flight, Plan_Date WHERE Flight.flightID = Plan_Date.flightID_2 AND Plan_Date.itemID = " + request.getParameter("itemID");
+         rset = stmt.executeQuery(sqlStr1);
+         rset.next();
+         out.println("<div class='planeright'><h4 align='center'>Return Flight</h4><p>From "+rset.getString("departureCity")+" To "+rset.getString("arrivalCity")+" </p>"
+            + "<p> Time: "+rset.getString("departureTime")+"-"+rset.getString("arrivalTime")+"  </p>"
+            +"<p> Flight Number: "+rset.getString("flightNumber")+"</p>"
+            +"<p> Airline: "+rset.getString("airline")+"</p>"
+          +"</div>");
+
+         out.println("</div></section>");
+
+         out.println("<div class = 'container'><form method='post' action='checkout'>");
+         out.println("<input type='hidden' name='itemID' value=" + itemID+ " />");
          out.println("<div class = 'button' align='center'><input type='submit' value='Join'></div>");
-         out.println("</form>");
+         out.println("</form></div>");
+
+
          String sqlStr2 = "SELECT * FROM Plan_Date WHERE planID = "
-               + rset.getInt("planID");
+               + planID;
          out.println(" <section id = 'available'> <div class = 'container'> <header class='section-header'> <br/><br/> <h3 class='section-title'>ALL AVAILABLE DATES FOR THE PLAN</h3> <br/> <br/> <div class='row hotdeals-cols'> ");
-         ResultSet rset2 = stmt.executeQuery(sqlStr2);
-         while(rset2.next()){
+         rset = stmt.executeQuery(sqlStr2);
+         while(rset.next()){
             out.println("<div class='col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp' data-wow-delay='0.1s'> <div class = 'availabledate'> <div class='portfolio-wrap'> <p>");
-            out.println("<br/> Duriation: "+rset2.getDate("startDate")+" - "+rset2.getDate("endDate"));
-            out.println("<br/> price: $"+rset2.getInt("price"));
-            out.println("<br/> Remaining Seats: "+rset2.getInt("remaining_seat")+"</p>");
+            out.println("<br/> Duriation: "+rset.getDate("startDate")+" - "+rset.getDate("endDate"));
+            out.println("<br/> price: $"+rset.getInt("price"));
+            out.println("<br/> Remaining Seats: "+rset.getInt("remaining_seat")+"</p>");
             out.println("<form method='post' action='detail'>");
-            out.println("<input type='hidden' name='itemID' value=" + rset2.getInt("itemID") + " />");
+            out.println("<input type='hidden' name='itemID' value=" + rset.getInt("itemID") + " />");
             out.println("<div class = 'button' align='center'><input type='submit' value='Check'></div>");
             out.println("</form>");
             out.println("</div></div></div>");
