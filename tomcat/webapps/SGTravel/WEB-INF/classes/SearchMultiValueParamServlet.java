@@ -100,16 +100,16 @@ public class SearchMultiValueParamServlet extends HttpServlet {  // JDK 6 and ab
             // Print a paragraph <p>...</p> for each row
 
             out.println(" <div class='col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp' data-wow-delay='0.1s'> <div class='portfolio-wrap'> ");
-            out.println("<form method='post' action='detail' name='myform'>");
+            out.println("<form method='post' action='detail' id='myform'>");
             out.println("<input type='hidden' name='itemID' value=" + rset.getInt("itemID") + " />");
-            out.println("<a href='javascript: submitform()''><img src='"+rset.getString("img_path")+"' class='img-fluid' alt=''></a>");
+            out.println("<img src='"+rset.getString("img_path")+"' class='img-fluid' alt='' /img>");
             out.println("<p>Plan ID: "+ rset.getInt("planID"));
             out.println("<br/>Plane Title: " + rset.getString("planTitle"));
             out.println("<br/>Duration: " +rset.getDate("startDate")+" - "+rset.getDate("endDate"));
             out.println("<br/>Price: $" + rset.getInt("price"));
-            out.println("<br/> Remaining Seats: "+rset.getInt("remaining_seat")+"</p>");
-            out.println("</form>");
-            out.println("<script type='text/javascript'>function submitform(){ if(document.myform.onsubmit && !document.myform.onsubmit()) { return; } document.myform.submit();}</script>");
+            out.println("<br/> Remaining Seats: "+rset.getInt("remaining_seat"));
+            //out.println("<br/><a href='#' onclick='document.getElementById('myform').submit()' >Submit</a></p></form>");
+            out.println("<div class = 'button' align='center'><input type='submit' value='Check' ></div></form>");
             out.println("<form method='post' action='checkout'>");
             out.println("<input type='hidden' name='itemID' value=" + rset.getInt("itemID") + " />");
             out.println("<div class = 'button' align='center'><input type='submit' value='Join' ></div>");

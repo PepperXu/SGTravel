@@ -238,7 +238,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 .loginregister {
     padding: 10px 0 1px 0;
     text-decoration: none;
-   
+
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
     font-size: 13px;
@@ -246,7 +246,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     outline: none;
 
     text-align: right;
-    
+
     background: #ffb902;
 }
 
@@ -270,7 +270,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	text-align: center;
 }
 
-.button input[type=submit] {
+.button input[type="submit"] {
 	align-self: center;
 	text-align: center;
 	padding: 60px 0 0px 0;
@@ -285,7 +285,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     font-size: 13px;
     padding: 0.8em;
     font-size: 0.9em;
-    
+
     width: 20%;
 }
 
@@ -358,7 +358,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   height: 100vh;
   background: url(../images/1.jpg) no-repeat 0px 0px;
   background-size:cover;
- 
+
 }
 
 
@@ -383,7 +383,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   right: 0;
   top: 0;
   bottom: 0;
- 
+
   z-index: 9;
 }
 
@@ -618,7 +618,7 @@ Account order history
 
 
 #history {
-  
+
 
 }
 
@@ -634,7 +634,7 @@ Account order history
 
 
 /*--===========
-contact 
+contact
 ============---*/
 
 #contact {
@@ -755,7 +755,7 @@ about us
 #about {
   background-color: #ffffff;
   background-size: 500px 0 300px 0;
-  
+
   padding: 60px 0 40px 0;
   position: relative;
 
@@ -768,7 +768,7 @@ about us
   right: 0;
   top: 0;
   bottom: 0;
-  
+
   z-index: 9;
 }
 
@@ -949,10 +949,15 @@ panneldetail
  }
 
 #flightdetail .planeleft{
- 
+
   width: 50%;
   float: left;
+<<<<<<< HEAD
+
+
+=======
   background-color:#e3dddd;
+>>>>>>> c66cc7ba4b9ad441f4f7ec232b8450e16b36b360
 
  }
 
@@ -966,9 +971,14 @@ panneldetail
 
  }
  #flightdetail .planeright{
+<<<<<<< HEAD
+
+  margin-left: 50%;
+=======
   
  background-color:#e3dddd;
   
+>>>>>>> c66cc7ba4b9ad441f4f7ec232b8450e16b36b360
 
  }
 
@@ -983,7 +993,7 @@ panneldetail
  }
 
 /*--===========
-Main page:search  
+Main page:search
 ============---*/
 
 /*-- Index-Page-Styling --*/
@@ -1146,7 +1156,7 @@ ul.w3agile {
 	display: table;
 }
 .cbp-ig-grid:after {
-	clear: both; 
+	clear: both;
 }
 .cbp-ig-grid li {
 	width: 33.3%;
@@ -1372,7 +1382,7 @@ ul li .check{
 .agile_form input[type=radio]:checked ~ label{
   color: #03aaad;
  }
-  
+
 .agile_form input[type=text]{
     padding: 0.8em 1em;
     color: #000;
@@ -1419,8 +1429,8 @@ input.name,input.date,input.num, input .comment{
     padding: 0.8em 1em;
     color: #777!important;
     -webkit-appearance: none;
-    
-}  
+
+}
 
 .section_class_agileits .num {
     border: none;
@@ -1432,8 +1442,8 @@ input.name,input.date,input.num, input .comment{
     padding: 0.8em 1em;
     color: #777!important;
     -webkit-appearance: none;
-    
-}  
+
+}
 .section_class_agileits {
     margin: 1em 0;
 }
@@ -1442,7 +1452,7 @@ input.name,input.date,input.num, input .comment{
     cursor: pointer;
 }
 
- .submit input[type=submit] {
+ .subm input[type=submit] {
     color: #fff;
     padding: 0.8em;
     font-size: 0.9em;
@@ -1456,7 +1466,7 @@ input.name,input.date,input.num, input .comment{
     width: 100%;
 }
 
-.submit input[type="submit"]:hover {
+.subm input[type="submit"]:hover {
     background:#e5ac16;
 }
 .agileits_w3layouts_copyright p {

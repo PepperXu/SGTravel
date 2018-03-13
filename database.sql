@@ -60,7 +60,7 @@ drop table if exists Flight;
 create table Flight
 	(
 		flightID int,
-		filghtNumber char(20),
+		flightNumber char(20),
 		airline varchar(50),
 		departureCity varchar(50),
 		departureTime DATETIME,
